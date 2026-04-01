@@ -12,11 +12,12 @@ from contextlib import asynccontextmanager
 
 from .config import get_settings
 from .database import init_db
+from .tasks import initialize_scheduler, shutdown_scheduler, init_alert_scheduler, stop_alert_scheduler
 from .routers import (
     auth, portfolio, market, alerts,
     analytics, watchlist, transactions, goals,
     dividends, news, leaderboard, prediction,
-    converter, share, preferences, export, tools, investment
+    converter, share, preferences, export, tools, investment, chat, backtest
 )
 
 settings = get_settings()
@@ -34,9 +35,27 @@ async def lifespan(app: FastAPI):
     print("✅ Database initialized")
     print("📊 Data aggregator ready (News + Reddit + Twitter + FRED + CoinGecko)")
     print("🤖 ML ensemble prediction engine loaded")
+    try:
+        initialize_scheduler()
+        print("📅 Leaderboard scheduler initialized")
+    except Exception as e:
+        print(f"⚠️ Warning: Could not initialize leaderboard scheduler: {e}")
+    try:
+        init_alert_scheduler()
+        print("🔔 Alert scheduler initialized")
+    except Exception as e:
+        print(f"⚠️ Warning: Could not initialize alert scheduler: {e}")
     yield
     # Shutdown
     print("👋 Shutting down AssetPulse...")
+    try:
+        shutdown_scheduler()
+    except Exception as e:
+        print(f"⚠️ Warning: Error shutting down scheduler: {e}")
+    try:
+        stop_alert_scheduler()
+    except Exception as e:
+        print(f"⚠️ Warning: Error shutting down alert scheduler: {e}")
 
 
 # Create FastAPI app
@@ -138,6 +157,8 @@ app.include_router(preferences.router)
 app.include_router(export.router)
 app.include_router(tools.router)
 app.include_router(investment.router)
+app.include_router(chat.router)
+app.include_router(backtest.router)
 
 
 # Health check endpoint (use /health, not / so SPA serves at root)
