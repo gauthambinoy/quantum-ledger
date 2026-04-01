@@ -108,6 +108,13 @@ async def get_current_active_user(
     return current_user
 
 
+async def get_current_user_id(
+    current_user: models.User = Depends(get_current_active_user)
+) -> int:
+    """Get current user ID"""
+    return current_user.id
+
+
 def authenticate_user(db: Session, email: str, password: str) -> Optional[models.User]:
     """Authenticate a user by email and password"""
     user = db.query(models.User).filter(models.User.email == email).first()

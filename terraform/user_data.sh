@@ -42,6 +42,7 @@ DATABASE_URL=postgresql://assetpulse:${db_password}@${db_host}:${db_port}/assetp
 NEWSAPI_KEY=${newsapi_key}
 FRED_API_KEY=${fred_api_key}
 JWT_SECRET_KEY=${jwt_secret}
+ANTHROPIC_API_KEY=${anthropic_api_key}
 DEBUG=false
 ALLOWED_ORIGINS=*
 PYTHONUNBUFFERED=1

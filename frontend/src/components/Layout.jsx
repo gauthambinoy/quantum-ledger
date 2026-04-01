@@ -36,7 +36,8 @@ import {
   Scale,
   Zap,
   Search,
-  BarChart2
+  BarChart2,
+  MessageCircle
 } from 'lucide-react';
 
 const Layout = () => {
@@ -87,6 +88,8 @@ const Layout = () => {
       title: 'Tools',
       items: [
         { path: '/prediction', icon: Brain, label: 'AI Prediction' },
+        { path: '/chat', icon: MessageCircle, label: 'AI Chat' },
+        { path: '/backtester', icon: BarChart2, label: 'Backtester' },
         { path: '/dca', icon: Calculator, label: 'DCA Calculator' },
         { path: '/converter', icon: ArrowRightLeft, label: 'Converter' },
         { path: '/alerts', icon: Bell, label: 'Alerts' },

@@ -15,6 +15,7 @@ services:
       REDDIT_CLIENT_ID: ${REDDIT_CLIENT_ID:-}
       REDDIT_CLIENT_SECRET: ${REDDIT_CLIENT_SECRET:-}
       TWITTER_BEARER_TOKEN: ${TWITTER_BEARER_TOKEN:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
     volumes:
       - ./data:/app/data
       - ./backend:/app/backend
