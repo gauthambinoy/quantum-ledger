@@ -34,6 +34,7 @@ import Screener from './pages/Screener';
 import DCA from './pages/DCA';
 import TaxReport from './pages/TaxReport';
 import Rebalance from './pages/Rebalance';
+import ChatBot from './pages/ChatBot';
 
 // Components
 import Layout from './components/Layout';
@@ -154,6 +155,7 @@ function App() {
               <Route path="invest/analyze" element={<DeepAnalysis />} />
               <Route path="profit-calc" element={<ProfitCalculator />} />
               <Route path="market-pulse" element={<MarketPulse />} />
+              <Route path="chat" element={<ChatBot />} />
             </Route>
 
             {/* Catch all */}

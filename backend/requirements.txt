@@ -44,3 +44,12 @@ newsapi==1.1.4
 # Social Media APIs
 praw==7.7.0
 tweepy==4.14.0
+
+# AI & Claude API
+anthropic==0.38.0
+
+# Email & SMS Alerts
+sendgrid==6.11.0
+twilio==9.0.4
+apscheduler==3.10.4
+pytz==2024.1

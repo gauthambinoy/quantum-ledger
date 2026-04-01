@@ -20,12 +20,22 @@ class Settings(BaseSettings):
     # API Keys
     coingecko_api_key: str = ""
     alpha_vantage_key: str = ""
-    
+    anthropic_api_key: str = ""
+
+    # Email Service (SendGrid)
+    sendgrid_api_key: str = ""
+    sendgrid_from_email: str = "noreply@assetpulse.ai"
+
+    # SMS Service (Twilio)
+    twilio_account_sid: str = ""
+    twilio_auth_token: str = ""
+    twilio_phone_number: str = ""
+
     # Server
     host: str = "0.0.0.0"
     port: int = 8000
     debug: bool = False
-    
+
     # CORS
     allowed_origins: list = ["http://localhost:3000", "http://localhost:5173"]
     
