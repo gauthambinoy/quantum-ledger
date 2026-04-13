@@ -2,7 +2,7 @@
 Developer API v1.0 - Public API for QuantumLedger predictions and data
 Monetized API endpoints with rate limiting and usage tracking
 """
-from fastapi import APIRouter, Depends, HTTPException, Header, status, Query
+from fastapi import APIRouter, Depends, HTTPException, Header, Path, status, Query
 from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session
 from datetime import datetime, timedelta
@@ -91,7 +91,7 @@ async def check_rate_limit_middleware(
     description="Get AI price prediction for a specific symbol"
 )
 async def get_prediction(
-    symbol: str = Query(..., description="Stock/crypto symbol (e.g., AAPL, BTC)"),
+    symbol: str = Path(..., description="Stock/crypto symbol (e.g., AAPL, BTC)"),
     api_key: models.APIKey = Depends(check_rate_limit_middleware),
     db: Session = Depends(get_db)
 ):
@@ -204,7 +204,7 @@ async def get_top_predictions(
     description="Get detailed sentiment analysis for a symbol from news and social media"
 )
 async def get_sentiment(
-    symbol: str = Query(..., description="Asset symbol"),
+    symbol: str = Path(..., description="Asset symbol"),
     api_key: models.APIKey = Depends(check_rate_limit_middleware),
     db: Session = Depends(get_db)
 ):
@@ -242,7 +242,7 @@ async def get_sentiment(
     description="Get actionable trading signals based on technical and ML analysis"
 )
 async def get_signals(
-    symbol: str = Query(..., description="Asset symbol"),
+    symbol: str = Path(..., description="Asset symbol"),
     api_key: models.APIKey = Depends(check_rate_limit_middleware),
     db: Session = Depends(get_db)
 ):
