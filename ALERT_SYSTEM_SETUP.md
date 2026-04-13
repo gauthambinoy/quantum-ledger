@@ -1,4 +1,4 @@
-# AssetPulse Email/SMS Alerts System - Setup Guide
+# QuantumLedger Email/SMS Alerts System - Setup Guide
 
 ## Overview
 
@@ -65,7 +65,7 @@ Add these to your `.env` file:
 ```env
 # Email Service (SendGrid)
 SENDGRID_API_KEY=your_sendgrid_api_key_here
-SENDGRID_FROM_EMAIL=noreply@assetpulse.ai
+SENDGRID_FROM_EMAIL=noreply@quantumledger.ai
 
 # SMS Service (Twilio)
 TWILIO_ACCOUNT_SID=your_twilio_account_sid
@@ -455,7 +455,7 @@ For issues with:
 - **Twilio**: https://www.twilio.com/help
 - **APScheduler**: https://apscheduler.readthedocs.io
 
-For AssetPulse issues: Create an issue on GitHub
+For QuantumLedger issues: Create an issue on GitHub
 
 ---
 

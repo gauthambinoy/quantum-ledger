@@ -2,7 +2,7 @@
 
 ## What's New
 
-AssetPulse now includes a **Community Leaderboard** feature that lets traders:
+QuantumLedger now includes a **Community Leaderboard** feature that lets traders:
 - 🏆 Compete on prediction accuracy
 - 🎯 Earn achievement badges
 - 👥 Follow top traders

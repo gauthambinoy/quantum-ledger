@@ -1,8 +1,8 @@
-# AssetPulse Mobile App - Integration Guide
+# QuantumLedger Mobile App - Integration Guide
 
 ## Overview
 
-This guide explains how the mobile app integrates with the existing AssetPulse backend and web application.
+This guide explains how the mobile app integrates with the existing QuantumLedger backend and web application.
 
 ## Architecture
 
@@ -10,7 +10,7 @@ This guide explains how the mobile app integrates with the existing AssetPulse b
 ┌─────────────────────────────────────┐
 │      iOS/Android Devices            │
 │  ┌───────────────────────────────┐  │
-│  │  AssetPulse Mobile App        │  │
+│  │  QuantumLedger Mobile App        │  │
 │  │  (React Native + Expo)        │  │
 │  └──────────────┬────────────────┘  │
 └─────────────────┼──────────────────┘
@@ -19,7 +19,7 @@ This guide explains how the mobile app integrates with the existing AssetPulse b
                   │ JWT Token Auth
                   ▼
 ┌─────────────────────────────────────┐
-│    AssetPulse Backend API           │
+│    QuantumLedger Backend API           │
 │  (Node.js/Express)                  │
 │  Port: 3000                         │
 │  Base: /api                         │
@@ -384,14 +384,14 @@ ENVIRONMENT=development
 
 **Staging**
 ```
-API_URL=https://staging-api.assetpulse.com/api
+API_URL=https://staging-api.quantumledger.com/api
 LOG_LEVEL=info
 ENVIRONMENT=staging
 ```
 
 **Production**
 ```
-API_URL=https://api.assetpulse.com/api
+API_URL=https://api.quantumledger.com/api
 LOG_LEVEL=warn
 ENVIRONMENT=production
 ```

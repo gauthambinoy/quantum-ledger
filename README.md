@@ -1,6 +1,6 @@
 ---
-title: AssetPulse
-emoji: 💹
+title: QuantumLedger
+emoji: ⚛️
 colorFrom: blue
 colorTo: purple
 sdk: docker
@@ -8,7 +8,7 @@ pinned: false
 license: mit
 ---
 
-# AssetPulse
+# QuantumLedger
 
 🚀 AI-Powered Profit Prediction Platform for Stocks & Crypto
 Real-time analytics with 90%+ accuracy ML predictions

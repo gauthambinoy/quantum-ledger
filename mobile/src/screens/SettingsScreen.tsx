@@ -227,7 +227,7 @@ export default function SettingsScreen() {
         <Card style={styles.card}>
           <Card.Title title="About" />
           <Card.Content>
-            <Paragraph>AssetPulse Mobile</Paragraph>
+            <Paragraph>QuantumLedger Mobile</Paragraph>
             <Paragraph>Version 1.0.0</Paragraph>
             <Paragraph style={styles.smallText}>
               Smart Investment Analytics on your mobile device

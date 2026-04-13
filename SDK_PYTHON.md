@@ -1,17 +1,17 @@
-# AssetPulse Python SDK
+# QuantumLedger Python SDK
 
-Simple and powerful Python SDK for AssetPulse Developer API.
+Simple and powerful Python SDK for QuantumLedger Developer API.
 
 ## Installation
 
 ```bash
-pip install assetpulse
+pip install quantumledger
 ```
 
 Or from source:
 
 ```bash
-git clone https://github.com/assetpulse/python-sdk.git
+git clone https://github.com/quantumledger/python-sdk.git
 cd python-sdk
 pip install -e .
 ```
@@ -19,7 +19,7 @@ pip install -e .
 ## Quick Start
 
 ```python
-from assetpulse import APIClient
+from quantumledger import APIClient
 
 # Initialize client
 client = APIClient(
@@ -50,12 +50,12 @@ print(f"TSLA Trading Signal: {signals.overall_signal}")
 ### Environment Variables
 
 ```bash
-export ASSETPULSE_API_KEY="ak_xxx"
-export ASSETPULSE_API_SECRET="secret_xxx"
+export QUANTUMLEDGER_API_KEY="ak_xxx"
+export QUANTUMLEDGER_API_SECRET="secret_xxx"
 ```
 
 ```python
-from assetpulse import APIClient
+from quantumledger import APIClient
 
 # Automatically loads from environment variables
 client = APIClient()
@@ -64,12 +64,12 @@ client = APIClient()
 ### Manual Configuration
 
 ```python
-from assetpulse import APIClient
+from quantumledger import APIClient
 
 client = APIClient(
     api_key="ak_xxx",
     api_secret="secret_xxx",
-    base_url="https://assetpulse.ai",  # Optional, defaults to production
+    base_url="https://quantumledger.ai",  # Optional, defaults to production
     timeout=10  # Request timeout in seconds
 )
 ```
@@ -244,7 +244,7 @@ high_confidence = [p for p in predictions if p.confidence > 80]
 ### Error Handling
 
 ```python
-from assetpulse import (
+from quantumledger import (
     APIClient,
     APIError,
     RateLimitError,
@@ -270,7 +270,7 @@ except APIError as e:
 
 ```python
 import time
-from assetpulse import APIClient
+from quantumledger import APIClient
 
 client = APIClient(api_key, api_secret)
 
@@ -311,7 +311,7 @@ client.send_webhook_alert({
 ### Example 1: Automated Trading Bot
 
 ```python
-from assetpulse import APIClient
+from quantumledger import APIClient
 import time
 
 class TradingBot:
@@ -360,7 +360,7 @@ bot.run()
 ### Example 2: Sentiment Dashboard
 
 ```python
-from assetpulse import APIClient
+from quantumledger import APIClient
 import json
 
 class SentimentDashboard:
@@ -408,7 +408,7 @@ dashboard.print_report()
 ```python
 import discord
 from discord.ext import commands, tasks
-from assetpulse import APIClient
+from quantumledger import APIClient
 
 class PredictionBot(commands.Cog):
     def __init__(self, bot, api_client):
@@ -492,10 +492,10 @@ bot.run("DISCORD_TOKEN")
 
 ### Getting Help
 
-- **Documentation:** https://assetpulse.ai/docs
-- **GitHub Issues:** https://github.com/assetpulse/python-sdk/issues
-- **Email:** support@assetpulse.ai
-- **Discord:** https://discord.gg/assetpulse
+- **Documentation:** https://quantumledger.ai/docs
+- **GitHub Issues:** https://github.com/quantumledger/python-sdk/issues
+- **Email:** support@quantumledger.ai
+- **Discord:** https://discord.gg/quantumledger
 
 ## License
 

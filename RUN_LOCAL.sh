@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "🚀 Starting AssetPulse Locally..."
+echo "🚀 Starting QuantumLedger Locally..."
 echo ""
 echo "📋 This script will:"
 echo "1. Setup Python virtual environment"
@@ -23,9 +23,9 @@ pip install -q fastapi uvicorn sqlalchemy psycopg2-binary pydantic python-dotenv
 if [ ! -f backend/.env ]; then
     echo "📝 Creating .env file..."
     cat > backend/.env << 'ENV'
-DATABASE_URL=sqlite:///./data/assetpulse.db
+DATABASE_URL=sqlite:///./data/quantumledger.db
 REDIS_URL=redis://localhost:6379/0
-JWT_SECRET_KEY=assetpulse-local-secret-key
+JWT_SECRET_KEY=quantumledger-local-secret-key
 DEBUG=true
 ALLOWED_ORIGINS=*
 NEWSAPI_KEY=test
@@ -42,12 +42,12 @@ echo ""
 echo "🎯 TO START YOUR APP:"
 echo ""
 echo "TERMINAL 1 - Backend (API + Docs):"
-echo "cd /home/gautham/cryptostock-pro"
+echo "cd /home/gautham/quantum-ledger"
 echo "source venv/bin/activate"
 echo "python -m uvicorn backend.app.main:app --reload --port 8000"
 echo ""
 echo "TERMINAL 2 - Frontend (UI):"
-echo "cd /home/gautham/cryptostock-pro/frontend"
+echo "cd /home/gautham/quantum-ledger/frontend"
 echo "npm install"
 echo "npm run dev"
 echo ""

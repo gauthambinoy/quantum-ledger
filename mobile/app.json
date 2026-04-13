@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "AssetPulse",
-    "slug": "assetpulse-mobile",
+    "name": "QuantumLedger",
+    "slug": "quantumledger-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

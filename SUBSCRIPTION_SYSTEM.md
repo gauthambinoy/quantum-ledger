@@ -1,4 +1,4 @@
-# Premium Subscription System for AssetPulse
+# Premium Subscription System for QuantumLedger
 
 Complete premium subscription system with Stripe integration, feature gating, and usage tracking.
 
@@ -242,7 +242,7 @@ payment_service.record_usage(db, user, "prediction", amount=1)
 ### Webhook Setup
 
 1. Configure webhook in Stripe Dashboard
-2. Set URL: `https://api.assetpulse.ai/api/subscriptions/webhook`
+2. Set URL: `https://api.quantumledger.ai/api/subscriptions/webhook`
 3. Select events listed above
 4. Add secret to `.env` as `STRIPE_WEBHOOK_SECRET`
 
@@ -263,7 +263,7 @@ from ..services.email_service import send_email
 
 send_email(
     to=user.email,
-    subject="Welcome to AssetPulse Pro",
+    subject="Welcome to QuantumLedger Pro",
     template="subscription_welcome",
     data={
         "user_name": user.full_name,
@@ -455,6 +455,6 @@ For Stripe integration issues:
 - [Stripe API Reference](https://stripe.com/docs/api)
 - [Webhook Events](https://stripe.com/docs/webhooks)
 
-For AssetPulse support:
+For QuantumLedger support:
 - Create issue on GitHub
-- Email support@assetpulse.ai
+- Email support@quantumledger.ai

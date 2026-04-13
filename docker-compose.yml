@@ -6,12 +6,12 @@ services:
     ports:
       - "8000:8000"
     environment:
-      DATABASE_URL: ${DATABASE_URL:-sqlite:///./data/assetpulse.db}
+      DATABASE_URL: ${DATABASE_URL:-sqlite:///./data/quantumledger.db}
       DEBUG: "false"
       ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-*}
       NEWSAPI_KEY: ${NEWSAPI_KEY:-test}
       FRED_API_KEY: ${FRED_API_KEY:-test}
-      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-assetpulse-secret}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-quantumledger-secret}
       REDDIT_CLIENT_ID: ${REDDIT_CLIENT_ID:-}
       REDDIT_CLIENT_SECRET: ${REDDIT_CLIENT_SECRET:-}
       TWITTER_BEARER_TOKEN: ${TWITTER_BEARER_TOKEN:-}

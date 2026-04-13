@@ -130,7 +130,7 @@
 ## Phase 7: SDKs & Client Libraries
 
 ### Python SDK
-- [ ] Create `assetpulse-python` package
+- [ ] Create `quantumledger-python` package
 - [ ] Implement all API methods
 - [ ] Error handling with custom exceptions
 - [ ] Retry logic with exponential backoff
@@ -139,7 +139,7 @@
 - [ ] Publish to PyPI
 
 ### JavaScript SDK
-- [ ] Create `assetpulse-js` package
+- [ ] Create `quantumledger-js` package
 - [ ] Implement all API methods
 - [ ] Promise-based async
 - [ ] Error handling
@@ -184,7 +184,7 @@
 ### Content
 - [ ] Blog post: "Building a Profitable API"
 - [ ] Case studies: Use case implementations
-- [ ] Video: "Getting Started with AssetPulse API"
+- [ ] Video: "Getting Started with QuantumLedger API"
 - [ ] Comparison: API vs Web Dashboard
 - [ ] ROI calculator
 

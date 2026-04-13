@@ -1,4 +1,4 @@
-# 🎉 ASSETPULSE - FINAL DEPLOYMENT SUMMARY
+# 🎉 QUANTUMLEDGER - FINAL DEPLOYMENT SUMMARY
 
 ## ✅ EVERYTHING IS DONE
 
@@ -131,7 +131,7 @@ aws_secret_access_key = YOUR_SECRET_FROM_CSV
 
 ### Step 3: Deploy (10 minutes)
 ```bash
-cd /home/gautham/cryptostock-pro/terraform
+cd /home/gautham/quantum-ledger/terraform
 
 # Copy config template
 cp terraform.tfvars.example terraform.tfvars
@@ -166,7 +166,7 @@ After deployment, verify everything works:
 curl http://YOUR-IP:8000/health
 
 # 2. SSH into server
-ssh -i terraform/assetpulse-key.pem ubuntu@YOUR-IP
+ssh -i terraform/quantumledger-key.pem ubuntu@YOUR-IP
 
 # 3. Check containers running
 docker ps
@@ -316,7 +316,7 @@ cat ~/.aws/credentials
 curl http://YOUR-IP:8000/health
 
 # Check logs:
-ssh -i terraform/assetpulse-key.pem ubuntu@YOUR-IP
+ssh -i terraform/quantumledger-key.pem ubuntu@YOUR-IP
 docker-compose logs backend
 ```
 
@@ -347,7 +347,7 @@ terraform apply
 - **Terraform Docs**: https://www.terraform.io/docs
 - **AWS Free Tier**: https://aws.amazon.com/free
 - **Docker Docs**: https://docs.docker.com
-- **Your Repo**: https://github.com/gauthambinoy/cryptostock-pro
+- **Your Repo**: https://github.com/gauthambinoy/quantum-ledger
 
 ---
 
@@ -363,7 +363,7 @@ If you have issues:
 
 2. **Check the logs:**
    ```bash
-   ssh -i terraform/assetpulse-key.pem ubuntu@YOUR-IP
+   ssh -i terraform/quantumledger-key.pem ubuntu@YOUR-IP
    docker-compose logs backend
    ```
 
@@ -392,7 +392,7 @@ Everything is:
 ## 🚀 DEPLOY NOW!
 
 ```bash
-cd /home/gautham/cryptostock-pro/terraform
+cd /home/gautham/quantum-ledger/terraform
 cp terraform.tfvars.example terraform.tfvars
 nano terraform.tfvars  # Edit with your password
 terraform init
@@ -436,6 +436,6 @@ Time to Deploy:
 
 ---
 
-**AssetPulse is ready for production!** 🚀
+**QuantumLedger is ready for production!** 🚀
 
 Go deploy it! Let me know if you need help! 💪

@@ -19,7 +19,7 @@ class EmailService:
     def __init__(self):
         """Initialize SendGrid client"""
         self.sendgrid_api_key = getattr(settings, 'sendgrid_api_key', '')
-        self.from_email = getattr(settings, 'sendgrid_from_email', 'noreply@assetpulse.ai')
+        self.from_email = getattr(settings, 'sendgrid_from_email', 'noreply@quantumledger.ai')
 
         if self.sendgrid_api_key:
             self.sg = SendGridAPIClient(self.sendgrid_api_key)
@@ -302,7 +302,7 @@ class EmailService:
 
                         <!-- CTA Button -->
                         <div style="text-align: center; margin: 30px 0;">
-                            <a href="https://assetpulse.ai/alerts" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 30px; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: bold;">View Alerts</a>
+                            <a href="https://quantumledger.ai/alerts" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 30px; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: bold;">View Alerts</a>
                         </div>
 
                         <p style="color: #a0a0a0; font-size: 12px; margin-top: 20px;">
@@ -312,8 +312,8 @@ class EmailService:
 
                     <!-- Footer -->
                     <div style="text-align: center; margin-top: 20px; color: #666; font-size: 12px;">
-                        <p>AssetPulse - AI-Powered Investment Intelligence</p>
-                        <p style="margin: 8px 0 0 0;">© 2024 AssetPulse. All rights reserved.</p>
+                        <p>QuantumLedger - AI-Powered Investment Intelligence</p>
+                        <p style="margin: 8px 0 0 0;">© 2024 QuantumLedger. All rights reserved.</p>
                     </div>
                 </div>
             </body>
@@ -390,13 +390,13 @@ class EmailService:
 
                     <!-- CTA Button -->
                     <div style="text-align: center; margin: 30px 0;">
-                        <a href="https://assetpulse.ai/dashboard" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 30px; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: bold;">View Full Analysis</a>
+                        <a href="https://quantumledger.ai/dashboard" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 30px; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: bold;">View Full Analysis</a>
                     </div>
 
                     <!-- Footer -->
                     <div style="text-align: center; margin-top: 20px; color: #666; font-size: 12px;">
-                        <p>AssetPulse - AI-Powered Investment Intelligence</p>
-                        <p style="margin: 8px 0 0 0;">© 2024 AssetPulse. All rights reserved.</p>
+                        <p>QuantumLedger - AI-Powered Investment Intelligence</p>
+                        <p style="margin: 8px 0 0 0;">© 2024 QuantumLedger. All rights reserved.</p>
                     </div>
                 </div>
             </body>
@@ -444,14 +444,14 @@ class EmailService:
 
                         <!-- CTA Button -->
                         <div style="text-align: center; margin: 30px 0;">
-                            <a href="https://assetpulse.ai/dashboard?symbol={symbol}" style="background: linear-gradient(135deg, {color} 0%, #764ba2 100%); color: white; padding: 12px 30px; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: bold;">Analyze Now</a>
+                            <a href="https://quantumledger.ai/dashboard?symbol={symbol}" style="background: linear-gradient(135deg, {color} 0%, #764ba2 100%); color: white; padding: 12px 30px; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: bold;">Analyze Now</a>
                         </div>
                     </div>
 
                     <!-- Footer -->
                     <div style="text-align: center; margin-top: 20px; color: #666; font-size: 12px;">
-                        <p>AssetPulse - AI-Powered Investment Intelligence</p>
-                        <p style="margin: 8px 0 0 0;">© 2024 AssetPulse. All rights reserved.</p>
+                        <p>QuantumLedger - AI-Powered Investment Intelligence</p>
+                        <p style="margin: 8px 0 0 0;">© 2024 QuantumLedger. All rights reserved.</p>
                     </div>
                 </div>
             </body>
@@ -499,14 +499,14 @@ class EmailService:
 
                         <!-- CTA Button -->
                         <div style="text-align: center; margin: 30px 0;">
-                            <a href="https://assetpulse.ai/sentiment?symbol={symbol}" style="background: linear-gradient(135deg, {color} 0%, #764ba2 100%); color: white; padding: 12px 30px; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: bold;">View Sentiment</a>
+                            <a href="https://quantumledger.ai/sentiment?symbol={symbol}" style="background: linear-gradient(135deg, {color} 0%, #764ba2 100%); color: white; padding: 12px 30px; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: bold;">View Sentiment</a>
                         </div>
                     </div>
 
                     <!-- Footer -->
                     <div style="text-align: center; margin-top: 20px; color: #666; font-size: 12px;">
-                        <p>AssetPulse - AI-Powered Investment Intelligence</p>
-                        <p style="margin: 8px 0 0 0;">© 2024 AssetPulse. All rights reserved.</p>
+                        <p>QuantumLedger - AI-Powered Investment Intelligence</p>
+                        <p style="margin: 8px 0 0 0;">© 2024 QuantumLedger. All rights reserved.</p>
                     </div>
                 </div>
             </body>

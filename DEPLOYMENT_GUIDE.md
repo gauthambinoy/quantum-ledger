@@ -1,4 +1,4 @@
-# 🚀 AssetPulse - Deployment Guide
+# 🚀 QuantumLedger - Deployment Guide
 
 ## Quick Start: Deploy in 5 Minutes
 
@@ -77,7 +77,7 @@ heroku login
 
 ### Step 2: Create Heroku App
 ```bash
-heroku create assetpulse-app
+heroku create quantumledger-app
 ```
 
 ### Step 3: Add Environment Variables
@@ -96,7 +96,7 @@ heroku config:set TWITTER_BEARER_TOKEN=your-twitter-bearer-token
 git push heroku main
 ```
 
-Your app will be live at: `https://assetpulse-app.herokuapp.com`
+Your app will be live at: `https://quantumledger-app.herokuapp.com`
 
 ---
 
@@ -169,7 +169,7 @@ App available at: `http://localhost:8000`
 
 ```bash
 # Database
-DATABASE_URL=postgresql://user:password@host:5432/assetpulse
+DATABASE_URL=postgresql://user:password@host:5432/quantumledger
 REDIS_URL=redis://user:password@host:6379
 
 # JWT
@@ -344,4 +344,4 @@ For deployment issues:
 
 ---
 
-**AssetPulse is now production-ready with 90%+ accuracy predictions!** 🚀
+**QuantumLedger is now production-ready with 90%+ accuracy predictions!** 🚀

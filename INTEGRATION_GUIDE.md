@@ -1,6 +1,6 @@
-# AssetPulse Developer API - Integration Guide
+# QuantumLedger Developer API - Integration Guide
 
-> Complete guide to integrating AssetPulse predictions into your applications
+> Complete guide to integrating QuantumLedger predictions into your applications
 
 ## Table of Contents
 
@@ -14,7 +14,7 @@
 
 ### Step 1: Create Developer Account
 
-1. Sign up at https://assetpulse.ai
+1. Sign up at https://quantumledger.ai
 2. Complete email verification
 3. Go to Dashboard → Developer
 4. Click "Create New API Key"
@@ -33,15 +33,15 @@ Save the API key and secret immediately - you won't see the secret again!
 
 ```bash
 # .env file
-ASSETPULSE_API_KEY=ak_your_api_key_here
-ASSETPULSE_API_SECRET=your_secret_here
-ASSETPULSE_BASE_URL=https://assetpulse.ai
+QUANTUMLEDGER_API_KEY=ak_your_api_key_here
+QUANTUMLEDGER_API_SECRET=your_secret_here
+QUANTUMLEDGER_BASE_URL=https://quantumledger.ai
 ```
 
 ### Step 4: Verify Connection
 
 ```python
-from assetpulse import APIClient
+from quantumledger import APIClient
 
 client = APIClient()
 status = client.get_status()
@@ -53,12 +53,12 @@ print(f"Rate Limit: {status.rate_limit} calls/minute")
 
 ### 1. Robo-Advisor / Automated Trading
 
-**Scenario:** Build a trading bot that automatically executes trades based on AssetPulse predictions.
+**Scenario:** Build a trading bot that automatically executes trades based on QuantumLedger predictions.
 
 **Implementation:**
 
 ```python
-from assetpulse import APIClient
+from quantumledger import APIClient
 from broker_api import BrokerClient  # Your broker API
 import time
 
@@ -147,7 +147,7 @@ trader.monitor_and_trade()
 ```python
 import discord
 from discord.ext import commands, tasks
-from assetpulse import APIClient
+from quantumledger import APIClient
 
 class TradingBot(commands.Cog):
     def __init__(self, bot):
@@ -186,7 +186,7 @@ class TradingBot(commands.Cog):
                 )
             
             # Add footer with timestamp
-            embed.set_footer(text="Data from AssetPulse | Updated daily at 9 AM UTC")
+            embed.set_footer(text="Data from QuantumLedger | Updated daily at 9 AM UTC")
             
             await channel.send(embed=embed)
             
@@ -240,7 +240,7 @@ class TradingBot(commands.Cog):
                 inline=True
             )
             
-            embed.set_footer(text="Data from AssetPulse API")
+            embed.set_footer(text="Data from QuantumLedger API")
             
             await ctx.send(embed=embed)
             
@@ -314,14 +314,14 @@ bot.run("YOUR_DISCORD_TOKEN")
 ```python
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
-from assetpulse import APIClient
+from quantumledger import APIClient
 import schedule
 import time
 
 class SlackMarketBot:
-    def __init__(self, slack_token, assetpulse_key, assetpulse_secret):
+    def __init__(self, slack_token, quantumledger_key, quantumledger_secret):
         self.slack = WebClient(token=slack_token)
-        self.api = APIClient(assetpulse_key, assetpulse_secret)
+        self.api = APIClient(quantumledger_key, quantumledger_secret)
         self.channel = "#trading-alerts"
     
     def start(self):
@@ -429,8 +429,8 @@ class SlackMarketBot:
 # Run bot
 bot = SlackMarketBot(
     slack_token="xoxb-xxx",
-    assetpulse_key="ak_xxx",
-    assetpulse_secret="secret_xxx"
+    quantumledger_key="ak_xxx",
+    quantumledger_secret="secret_xxx"
 )
 bot.start()
 ```
@@ -446,14 +446,14 @@ bot.start()
 ```javascript
 import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, ActivityIndicator } from 'react-native';
-import AssetPulse from 'assetpulse-js';
+import QuantumLedger from 'quantumledger-js';
 
 const PredictionsScreen = () => {
   const [predictions, setPredictions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const client = new AssetPulse({
+  const client = new QuantumLedger({
     apiKey: process.env.REACT_APP_API_KEY,
     apiSecret: process.env.REACT_APP_API_SECRET
   });
@@ -545,10 +545,10 @@ export default PredictionsScreen;
 ```python
 #!/usr/bin/env python3
 """
-Complete example of AssetPulse API integration
+Complete example of QuantumLedger API integration
 """
 
-from assetpulse import APIClient
+from quantumledger import APIClient
 from datetime import datetime
 import json
 
@@ -560,7 +560,7 @@ def main():
     )
     
     print("=" * 60)
-    print("AssetPulse API - Integration Example")
+    print("QuantumLedger API - Integration Example")
     print("=" * 60)
     
     # 1. Check API Status
@@ -645,17 +645,17 @@ if __name__ == "__main__":
 ### JavaScript - Complete Example
 
 ```javascript
-// Complete example of AssetPulse API integration
-const AssetPulse = require('assetpulse-js');
+// Complete example of QuantumLedger API integration
+const QuantumLedger = require('quantumledger-js');
 
 async function main() {
-  const client = new AssetPulse({
-    apiKey: process.env.ASSETPULSE_API_KEY,
-    apiSecret: process.env.ASSETPULSE_API_SECRET
+  const client = new QuantumLedger({
+    apiKey: process.env.QUANTUMLEDGER_API_KEY,
+    apiSecret: process.env.QUANTUMLEDGER_API_SECRET
   });
 
   console.log('='.repeat(60));
-  console.log('AssetPulse API - JavaScript Integration Example');
+  console.log('QuantumLedger API - JavaScript Integration Example');
   console.log('='.repeat(60));
 
   try {
@@ -718,8 +718,8 @@ from dotenv import load_dotenv
 # Load from environment
 load_dotenv()
 
-api_key = os.getenv('ASSETPULSE_API_KEY')
-api_secret = os.getenv('ASSETPULSE_API_SECRET')
+api_key = os.getenv('QUANTUMLEDGER_API_KEY')
+api_secret = os.getenv('QUANTUMLEDGER_API_SECRET')
 
 if not api_key or not api_secret:
     raise ValueError("API credentials not found in environment")
@@ -828,7 +828,7 @@ except Exception as e:
 
 ### Check Usage Dashboard
 
-Visit: https://assetpulse.ai/developer/usage
+Visit: https://quantumledger.ai/developer/usage
 
 Monitor:
 - Total API calls
@@ -870,11 +870,11 @@ prediction = client.get_prediction("BTC")
 
 ## Support & Resources
 
-- **Documentation:** https://assetpulse.ai/docs
-- **API Reference:** https://assetpulse.ai/api-reference
-- **GitHub Issues:** https://github.com/assetpulse/python-sdk/issues
-- **Email Support:** support@assetpulse.ai
-- **Discord Community:** https://discord.gg/assetpulse
+- **Documentation:** https://quantumledger.ai/docs
+- **API Reference:** https://quantumledger.ai/api-reference
+- **GitHub Issues:** https://github.com/quantumledger/python-sdk/issues
+- **Email Support:** support@quantumledger.ai
+- **Discord Community:** https://discord.gg/quantumledger
 
 ---
 

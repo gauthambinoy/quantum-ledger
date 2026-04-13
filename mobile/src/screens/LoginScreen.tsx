@@ -73,7 +73,7 @@ export default function LoginScreen({ navigation }: any) {
     >
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
         <View style={styles.headerContainer}>
-          <Text style={styles.title}>AssetPulse</Text>
+          <Text style={styles.title}>QuantumLedger</Text>
           <Text style={styles.subtitle}>Smart Investment Analytics</Text>
         </View>
 

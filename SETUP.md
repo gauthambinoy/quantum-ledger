@@ -1,4 +1,4 @@
-# 🚀 CryptoStock Pro - Local Setup Guide
+# 🚀 QuantumLedger Pro - Local Setup Guide
 
 ## Prerequisites
 
@@ -10,8 +10,8 @@
 
 ### 1. Clone & Navigate
 ```bash
-git clone https://github.com/gauthambinoy/cryptostock-pro.git
-cd cryptostock-pro
+git clone https://github.com/gauthambinoy/quantum-ledger.git
+cd quantum-ledger
 ```
 
 ### 2. Backend Setup (Terminal 1)

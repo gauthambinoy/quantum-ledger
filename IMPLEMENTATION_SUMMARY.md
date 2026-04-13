@@ -1,4 +1,4 @@
-# AssetPulse Developer API - Implementation Summary
+# QuantumLedger Developer API - Implementation Summary
 
 ## Project Status: COMPLETE (95%)
 
@@ -394,7 +394,7 @@ python -m uvicorn backend.app.main:app --reload
 
 ### Test
 ```python
-from assetpulse import APIClient
+from quantumledger import APIClient
 
 client = APIClient(api_key="ak_xxx", api_secret="secret_xxx")
 prediction = client.get_prediction("BTC")
@@ -446,7 +446,7 @@ http://localhost:3000/developer
 
 ## Conclusion
 
-This is a **complete, production-ready API** that enables AssetPulse to:
+This is a **complete, production-ready API** that enables QuantumLedger to:
 
 1. **Monetize predictions** through tiered API access
 2. **Scale beyond the web app** with programmatic access

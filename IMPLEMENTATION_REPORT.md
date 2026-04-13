@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-The Community Leaderboard feature for AssetPulse has been **successfully implemented and committed to GitHub**. This feature enables users to compete on prediction accuracy, track their performance against other traders, and earn achievement badges.
+The Community Leaderboard feature for QuantumLedger has been **successfully implemented and committed to GitHub**. This feature enables users to compete on prediction accuracy, track their performance against other traders, and earn achievement badges.
 
 **Status**: ✅ COMPLETE AND TESTED  
 **Duration**: 4-5 hours  
@@ -665,7 +665,7 @@ A: Verify auth token is valid, check user permissions.
 
 ## Conclusion
 
-The Community Leaderboard feature has been fully implemented, tested, and integrated into the AssetPulse application. All requirements have been met and exceeded with:
+The Community Leaderboard feature has been fully implemented, tested, and integrated into the QuantumLedger application. All requirements have been met and exceeded with:
 
 - ✅ Complete backend implementation
 - ✅ Full-featured REST API

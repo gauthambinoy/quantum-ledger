@@ -1,4 +1,4 @@
-# 🚀 DEPLOY ASSETPULSE ON AWS WITH TERRAFORM
+# 🚀 DEPLOY QUANTUMLEDGER ON AWS WITH TERRAFORM
 
 ## THE SMARTEST WAY - FULLY AUTOMATED
 
@@ -67,10 +67,10 @@ output = json
 
 ## STEP 2: Prepare Terraform Variables (2 minutes)
 
-Go to: `/home/gautham/cryptostock-pro/terraform/`
+Go to: `/home/gautham/quantum-ledger/terraform/`
 
 ```bash
-cd /home/gautham/cryptostock-pro/terraform/
+cd /home/gautham/quantum-ledger/terraform/
 ```
 
 Copy the example file:
@@ -90,7 +90,7 @@ db_password      = "MySecurePassword123!"  # Change this!
 newsapi_key      = "pk_xxxx"  # Get from newsapi.org (optional)
 fred_api_key     = "xxxx"     # Get from fred.stlouisfed.org (optional)
 jwt_secret_key   = "my-secret-key-here"
-github_repo_url  = "https://github.com/gauthambinoy/cryptostock-pro.git"
+github_repo_url  = "https://github.com/gauthambinoy/quantum-ledger.git"
 ```
 
 Save (Ctrl+X, Y, Enter)
@@ -138,7 +138,7 @@ Outputs:
 
 live_app_url = "http://YOUR-IP:8000"
 api_docs_url = "http://YOUR-IP:8000/docs"
-private_key_path = "./assetpulse-key.pem"
+private_key_path = "./quantumledger-key.pem"
 ```
 
 **Copy the `live_app_url`** - That's your live application!
@@ -205,12 +205,12 @@ After 12 months: ~$15-20/month
 ### App not starting (wait 5 more minutes)
 ```bash
 # Check EC2 instance status
-terraform state show aws_instance.assetpulse
+terraform state show aws_instance.quantumledger
 ```
 
 ### Need to SSH into server
 ```bash
-ssh -i terraform/assetpulse-key.pem ubuntu@YOUR-IP
+ssh -i terraform/quantumledger-key.pem ubuntu@YOUR-IP
 
 # Check logs
 docker-compose logs -f backend
@@ -252,14 +252,14 @@ terraform destroy
 ### View logs
 ```bash
 # From local machine
-ssh -i terraform/assetpulse-key.pem ubuntu@YOUR-IP
+ssh -i terraform/quantumledger-key.pem ubuntu@YOUR-IP
 docker-compose logs -f backend
 ```
 
 ### Update application
 ```bash
-ssh -i terraform/assetpulse-key.pem ubuntu@YOUR-IP
-cd assetpulse
+ssh -i terraform/quantumledger-key.pem ubuntu@YOUR-IP
+cd quantumledger
 git pull
 docker-compose up -d --build
 ```
@@ -283,7 +283,7 @@ terraform apply
 
 - **Terraform Issues**: https://www.terraform.io/docs
 - **AWS Free Tier**: https://aws.amazon.com/free
-- **Your repo**: https://github.com/gauthambinoy/cryptostock-pro
+- **Your repo**: https://github.com/gauthambinoy/quantum-ledger
 
 ---
 
@@ -297,4 +297,4 @@ terraform plan
 terraform apply
 ```
 
-🚀 **Your AssetPulse is LIVE!**
+🚀 **Your QuantumLedger is LIVE!**

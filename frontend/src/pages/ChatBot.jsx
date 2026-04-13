@@ -102,7 +102,7 @@ const ChatBot = () => {
               <MessageCircle className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-white">AssetPulse AI</h1>
+              <h1 className="text-2xl font-bold text-white">QuantumLedger AI</h1>
               <p className="text-blue-100 text-sm">Your intelligent investment advisor</p>
             </div>
           </div>
@@ -126,7 +126,7 @@ const ChatBot = () => {
             <div className="p-4 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full mb-4">
               <MessageCircle className="w-12 h-12 text-blue-400" />
             </div>
-            <h2 className="text-3xl font-bold text-white mb-2">Welcome to AssetPulse AI</h2>
+            <h2 className="text-3xl font-bold text-white mb-2">Welcome to QuantumLedger AI</h2>
             <p className="text-gray-400 mb-8 max-w-md">
               Ask me anything about market analysis, portfolio optimization, price predictions, and investment strategies.
             </p>

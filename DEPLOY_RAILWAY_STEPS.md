@@ -18,7 +18,7 @@ Click **"Deploy from GitHub repo"**
 ---
 
 ## STEP 4: Select Your Repository
-Search for: `cryptostock-pro`
+Search for: `quantum-ledger`
 
 Click it to select
 
@@ -70,7 +70,7 @@ When deployment is done, you'll see:
 **"Service running"** ✓
 
 Copy the URL (looks like):
-`https://assetpulse-production-abc123.railway.app`
+`https://quantumledger-production-abc123.railway.app`
 
 ---
 
@@ -114,7 +114,7 @@ Most common issue: Missing DATABASE_URL
 1. In Railway dashboard
 2. Add Variable:
    - Key: `DATABASE_URL`
-   - Value: `sqlite:///./data/assetpulse.db`
+   - Value: `sqlite:///./data/quantumledger.db`
 3. Click Redeploy
 
 ---
@@ -124,7 +124,7 @@ Most common issue: Missing DATABASE_URL
 If Railway doesn't work, run locally:
 
 ```bash
-cd /home/gautham/cryptostock-pro
+cd /home/gautham/quantum-ledger
 docker-compose up -d
 ```
 
@@ -132,4 +132,4 @@ App will be at: `http://localhost:8000`
 
 ---
 
-**That's it! Your AssetPulse is LIVE!** 🚀
+**That's it! Your QuantumLedger is LIVE!** 🚀

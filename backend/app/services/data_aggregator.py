@@ -110,7 +110,7 @@ class DataAggregator:
             reddit = praw.Reddit(
                 client_id=client_id,
                 client_secret=client_secret,
-                user_agent='AssetPulse/2.0'
+                user_agent='QuantumLedger/2.0'
             )
 
             subreddits_to_check = [

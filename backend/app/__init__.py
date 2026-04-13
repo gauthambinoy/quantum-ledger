@@ -1,2 +1,2 @@
-# CryptoStock Pro Backend
+# QuantumLedger Pro Backend
 __version__ = "1.0.0"

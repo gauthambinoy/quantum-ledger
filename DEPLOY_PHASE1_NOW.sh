@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "🚀 AssetPulse Phase 1 - Deploying to AWS"
+echo "🚀 QuantumLedger Phase 1 - Deploying to AWS"
 echo "=========================================="
 echo ""
 echo "This script will:"
@@ -26,24 +26,24 @@ echo ""
 
 # Create temp directory
 cd /tmp
-rm -rf cryptostock-pro-phase1 2>/dev/null || true
-mkdir cryptostock-pro-phase1
-cd cryptostock-pro-phase1
+rm -rf quantum-ledger-phase1 2>/dev/null || true
+mkdir quantum-ledger-phase1
+cd quantum-ledger-phase1
 
 # Clone repo
 echo "📥 Cloning repository..."
-git clone https://github.com/gauthambinoy/cryptostock-pro.git
-cd cryptostock-pro/terraform
+git clone https://github.com/gauthambinoy/quantum-ledger.git
+cd quantum-ledger/terraform
 
 # Create terraform.tfvars with secure defaults
 echo "⚙️  Creating Terraform configuration..."
 cat > terraform.tfvars << 'TFVARS'
 aws_region = "us-east-1"
-db_password = "AssetPulse2024!SecurePass123"
+db_password = "QuantumLedger2024!SecurePass123"
 newsapi_key = "test"
 fred_api_key = "test"
-jwt_secret_key = "assetpulse-jwt-secret-key-2024"
-github_repo_url = "https://github.com/gauthambinoy/cryptostock-pro.git"
+jwt_secret_key = "quantumledger-jwt-secret-key-2024"
+github_repo_url = "https://github.com/gauthambinoy/quantum-ledger.git"
 TFVARS
 
 # Initialize Terraform
@@ -96,7 +96,7 @@ API_DOCS=$(terraform output -raw api_docs_url)
 PRIVATE_KEY=$(terraform output -raw private_key_path)
 PUBLIC_IP=$(terraform output -raw instance_public_ip)
 
-echo "🌐 Your AssetPulse App is LIVE:"
+echo "🌐 Your QuantumLedger App is LIVE:"
 echo ""
 echo "   App URL:  $APP_URL"
 echo "   API Docs: $API_DOCS"

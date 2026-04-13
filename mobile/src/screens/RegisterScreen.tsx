@@ -71,7 +71,7 @@ export default function RegisterScreen({ navigation }: any) {
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
         <View style={styles.headerContainer}>
           <Text style={styles.title}>Create Account</Text>
-          <Text style={styles.subtitle}>Join AssetPulse</Text>
+          <Text style={styles.subtitle}>Join QuantumLedger</Text>
         </View>
 
         <View style={styles.formContainer}>

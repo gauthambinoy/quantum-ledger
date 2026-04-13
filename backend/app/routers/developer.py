@@ -356,7 +356,7 @@ async def get_documentation(
             "openapi": "/openapi.json"
         },
         "api_reference": {
-            "base_url": "https://assetpulse.ai/api/v1",
+            "base_url": "https://quantumledger.ai/api/v1",
             "authentication": "Bearer API_KEY:API_SECRET",
             "rate_limits": {
                 "free": "No API access",
@@ -391,9 +391,9 @@ async def get_documentation(
             "python": {
                 "description": "Python SDK example",
                 "code": """
-import assetpulse
+import quantumledger
 
-client = assetpulse.APIClient(
+client = quantumledger.APIClient(
     api_key="YOUR_API_KEY",
     api_secret="YOUR_API_SECRET"
 )
@@ -414,9 +414,9 @@ print(sentiment)
             "javascript": {
                 "description": "JavaScript SDK example",
                 "code": """
-const AssetPulse = require('assetpulse-js');
+const QuantumLedger = require('quantumledger-js');
 
-const client = new AssetPulse({
+const client = new QuantumLedger({
   apiKey: 'YOUR_API_KEY',
   apiSecret: 'YOUR_API_SECRET'
 });
@@ -433,7 +433,7 @@ console.log(top);
             "curl": {
                 "description": "cURL example",
                 "code": """
-curl -X GET "https://assetpulse.ai/api/v1/prediction/BTC" \\
+curl -X GET "https://quantumledger.ai/api/v1/prediction/BTC" \\
   -H "Authorization: Bearer YOUR_API_KEY:YOUR_API_SECRET" \\
   -H "Content-Type: application/json"
 """

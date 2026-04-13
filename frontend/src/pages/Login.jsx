@@ -32,7 +32,7 @@ const Login = () => {
           <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-500 to-success-500 flex items-center justify-center mx-auto mb-4">
             <TrendingUp className="w-10 h-10 text-white" />
           </div>
-          <h1 className="text-3xl font-bold">CryptoStock Pro</h1>
+          <h1 className="text-3xl font-bold">QuantumLedger Pro</h1>
           <p className="text-gray-400 mt-2">Track your investments in real-time</p>
         </div>
 

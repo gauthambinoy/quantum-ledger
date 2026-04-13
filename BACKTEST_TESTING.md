@@ -1,7 +1,7 @@
 # Backtesting Engine - Testing Guide
 
 ## Overview
-The Backtesting Engine for AssetPulse allows users to test investment strategies on historical data with comprehensive risk metrics.
+The Backtesting Engine for QuantumLedger allows users to test investment strategies on historical data with comprehensive risk metrics.
 
 ## Components Implemented
 

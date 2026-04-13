@@ -145,7 +145,7 @@ stripe listen --forward-to localhost:8000/api/subscriptions/webhook
 
 1. Go to Stripe Dashboard > Developers > Webhooks
 2. Click "Add endpoint"
-3. Enter: `https://api.assetpulse.ai/api/subscriptions/webhook`
+3. Enter: `https://api.quantumledger.ai/api/subscriptions/webhook`
 4. Select events:
    - customer.subscription.updated
    - customer.subscription.deleted

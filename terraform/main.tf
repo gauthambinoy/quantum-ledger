@@ -1,4 +1,4 @@
-# AssetPulse - AWS Infrastructure (Terraform)
+# QuantumLedger - AWS Infrastructure (Terraform)
 # Deploys: EC2, RDS, Security Groups, Load Balancer, VPC
 # Everything fully automated!
 
@@ -16,45 +16,45 @@ provider "aws" {
 }
 
 # VPC
-resource "aws_vpc" "assetpulse" {
+resource "aws_vpc" "quantumledger" {
   cidr_block           = "10.0.0.0/16"
   enable_dns_hostnames = true
   enable_dns_support   = true
 
   tags = {
-    Name = "AssetPulse-VPC"
+    Name = "QuantumLedger-VPC"
   }
 }
 
 # Internet Gateway
-resource "aws_internet_gateway" "assetpulse" {
-  vpc_id = aws_vpc.assetpulse.id
+resource "aws_internet_gateway" "quantumledger" {
+  vpc_id = aws_vpc.quantumledger.id
 
   tags = {
-    Name = "AssetPulse-IGW"
+    Name = "QuantumLedger-IGW"
   }
 }
 
 # Public Subnet
 resource "aws_subnet" "public" {
-  vpc_id                  = aws_vpc.assetpulse.id
+  vpc_id                  = aws_vpc.quantumledger.id
   cidr_block              = "10.0.1.0/24"
   availability_zone       = data.aws_availability_zones.available.names[0]
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "AssetPulse-Public"
+    Name = "QuantumLedger-Public"
   }
 }
 
 # Private Subnet (for RDS)
 resource "aws_subnet" "private" {
-  vpc_id            = aws_vpc.assetpulse.id
+  vpc_id            = aws_vpc.quantumledger.id
   cidr_block        = "10.0.2.0/24"
   availability_zone = data.aws_availability_zones.available.names[1]
 
   tags = {
-    Name = "AssetPulse-Private"
+    Name = "QuantumLedger-Private"
   }
 }
 
@@ -65,15 +65,15 @@ data "aws_availability_zones" "available" {
 
 # Route Table
 resource "aws_route_table" "public" {
-  vpc_id = aws_vpc.assetpulse.id
+  vpc_id = aws_vpc.quantumledger.id
 
   route {
     cidr_block      = "0.0.0.0/0"
-    gateway_id      = aws_internet_gateway.assetpulse.id
+    gateway_id      = aws_internet_gateway.quantumledger.id
   }
 
   tags = {
-    Name = "AssetPulse-RT"
+    Name = "QuantumLedger-RT"
   }
 }
 
@@ -84,8 +84,8 @@ resource "aws_route_table_association" "public" {
 
 # Security Group for Web
 resource "aws_security_group" "web" {
-  name   = "assetpulse-web"
-  vpc_id = aws_vpc.assetpulse.id
+  name   = "quantumledger-web"
+  vpc_id = aws_vpc.quantumledger.id
 
   ingress {
     from_port   = 80
@@ -123,14 +123,14 @@ resource "aws_security_group" "web" {
   }
 
   tags = {
-    Name = "AssetPulse-Web-SG"
+    Name = "QuantumLedger-Web-SG"
   }
 }
 
 # Security Group for RDS
 resource "aws_security_group" "rds" {
-  name   = "assetpulse-rds"
-  vpc_id = aws_vpc.assetpulse.id
+  name   = "quantumledger-rds"
+  vpc_id = aws_vpc.quantumledger.id
 
   ingress {
     from_port       = 5432
@@ -147,29 +147,29 @@ resource "aws_security_group" "rds" {
   }
 
   tags = {
-    Name = "AssetPulse-RDS-SG"
+    Name = "QuantumLedger-RDS-SG"
   }
 }
 
 # RDS Subnet Group
-resource "aws_db_subnet_group" "assetpulse" {
-  name       = "assetpulse-db-subnet"
+resource "aws_db_subnet_group" "quantumledger" {
+  name       = "quantumledger-db-subnet"
   subnet_ids = [aws_subnet.public.id, aws_subnet.private.id]
 
   tags = {
-    Name = "AssetPulse-DB-Subnet"
+    Name = "QuantumLedger-DB-Subnet"
   }
 }
 
 # RDS PostgreSQL Database
-resource "aws_db_instance" "assetpulse" {
-  identifier     = "assetpulse-db"
+resource "aws_db_instance" "quantumledger" {
+  identifier     = "quantumledger-db"
   engine         = "postgres"
   engine_version = "15.3"
   instance_class = "db.t3.micro"
 
-  db_name  = "assetpulse"
-  username = "assetpulse"
+  db_name  = "quantumledger"
+  username = "quantumledger"
   password = var.db_password
 
   allocated_storage = 20
@@ -177,25 +177,25 @@ resource "aws_db_instance" "assetpulse" {
   storage_encrypted = true
 
   vpc_security_group_ids   = [aws_security_group.rds.id]
-  db_subnet_group_name     = aws_db_subnet_group.assetpulse.name
+  db_subnet_group_name     = aws_db_subnet_group.quantumledger.name
   publicly_accessible      = false
   skip_final_snapshot      = false
-  final_snapshot_identifier = "assetpulse-final-snapshot"
+  final_snapshot_identifier = "quantumledger-final-snapshot"
 
   backup_retention_period = 7
   backup_window           = "03:00-04:00"
   maintenance_window      = "sun:04:00-sun:05:00"
 
   tags = {
-    Name = "AssetPulse-DB"
+    Name = "QuantumLedger-DB"
   }
 }
 
 # EC2 Instance with auto-recovery
-resource "aws_instance" "assetpulse" {
+resource "aws_instance" "quantumledger" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
-  key_name      = aws_key_pair.assetpulse.key_name
+  key_name      = aws_key_pair.quantumledger.key_name
 
   subnet_id                   = aws_subnet.public.id
   vpc_security_group_ids      = [aws_security_group.web.id]
@@ -203,10 +203,10 @@ resource "aws_instance" "assetpulse" {
 
   user_data = base64encode(templatefile("${path.module}/user_data.sh", {
     repo_url         = var.github_repo_url
-    db_host          = aws_db_instance.assetpulse.address
-    db_port          = aws_db_instance.assetpulse.port
-    db_name          = aws_db_instance.assetpulse.db_name
-    db_user          = aws_db_instance.assetpulse.username
+    db_host          = aws_db_instance.quantumledger.address
+    db_port          = aws_db_instance.quantumledger.port
+    db_name          = aws_db_instance.quantumledger.db_name
+    db_user          = aws_db_instance.quantumledger.username
     db_password      = var.db_password
     newsapi_key      = var.newsapi_key
     fred_api_key     = var.fred_api_key
@@ -224,27 +224,27 @@ resource "aws_instance" "assetpulse" {
   monitoring = true
 
   # Enable auto-recovery (restarts instance if hardware fails)
-  depends_on = [aws_internet_gateway.assetpulse]
+  depends_on = [aws_internet_gateway.quantumledger]
 
   tags = {
-    Name = "AssetPulse-Server"
+    Name = "QuantumLedger-Server"
     Environment = "production"
-    Service = "assetpulse"
+    Service = "quantumledger"
   }
 }
 
 # EC2 Instance Recovery (automatically restarts if status checks fail)
-resource "aws_ec2_instance_state" "assetpulse_recovery" {
-  instance_id = aws_instance.assetpulse.id
+resource "aws_ec2_instance_state" "quantumledger_recovery" {
+  instance_id = aws_instance.quantumledger.id
 
   tags = {
-    Name = "AssetPulse-Recovery"
+    Name = "QuantumLedger-Recovery"
   }
 }
 
 # CloudWatch Alarm for EC2 Status Checks (auto-recover on failure)
-resource "aws_cloudwatch_metric_alarm" "assetpulse_status_check" {
-  alarm_name          = "assetpulse-instance-status-check"
+resource "aws_cloudwatch_metric_alarm" "quantumledger_status_check" {
+  alarm_name          = "quantumledger-instance-status-check"
   comparison_operator = "GreaterThanOrEqualToThreshold"
   evaluation_periods  = "2"
   metric_name         = "StatusCheckFailed"
@@ -253,21 +253,21 @@ resource "aws_cloudwatch_metric_alarm" "assetpulse_status_check" {
   statistic           = "Average"
   threshold           = "1.0"
   alarm_description   = "Auto-recover instance if status check fails"
-  alarm_actions       = [aws_sns_topic.assetpulse_alerts.arn]
+  alarm_actions       = [aws_sns_topic.quantumledger_alerts.arn]
 
   dimensions = {
-    InstanceId = aws_instance.assetpulse.id
+    InstanceId = aws_instance.quantumledger.id
   }
 }
 
 # SNS Topic for alerts
-resource "aws_sns_topic" "assetpulse_alerts" {
-  name = "assetpulse-alerts"
+resource "aws_sns_topic" "quantumledger_alerts" {
+  name = "quantumledger-alerts"
 }
 
 # CloudWatch Alarm for High CPU (notification only)
-resource "aws_cloudwatch_metric_alarm" "assetpulse_cpu" {
-  alarm_name          = "assetpulse-high-cpu"
+resource "aws_cloudwatch_metric_alarm" "quantumledger_cpu" {
+  alarm_name          = "quantumledger-high-cpu"
   comparison_operator = "GreaterThanThreshold"
   evaluation_periods  = "2"
   metric_name         = "CPUUtilization"
@@ -276,58 +276,58 @@ resource "aws_cloudwatch_metric_alarm" "assetpulse_cpu" {
   statistic           = "Average"
   threshold           = "80"
   alarm_description   = "Alert when CPU exceeds 80%"
-  alarm_actions       = [aws_sns_topic.assetpulse_alerts.arn]
+  alarm_actions       = [aws_sns_topic.quantumledger_alerts.arn]
 
   dimensions = {
-    InstanceId = aws_instance.assetpulse.id
+    InstanceId = aws_instance.quantumledger.id
   }
 }
 
 # CloudWatch Alarm for Disk Space
-resource "aws_cloudwatch_metric_alarm" "assetpulse_disk" {
-  alarm_name          = "assetpulse-low-disk"
+resource "aws_cloudwatch_metric_alarm" "quantumledger_disk" {
+  alarm_name          = "quantumledger-low-disk"
   comparison_operator = "LessThanThreshold"
   evaluation_periods  = "1"
   metric_name         = "DiskSpaceUtilization"
-  namespace           = "AssetPulse"
+  namespace           = "QuantumLedger"
   period              = "300"
   statistic           = "Average"
   threshold           = "10"
   alarm_description   = "Alert when disk space below 10%"
-  alarm_actions       = [aws_sns_topic.assetpulse_alerts.arn]
+  alarm_actions       = [aws_sns_topic.quantumledger_alerts.arn]
 
   dimensions = {
-    InstanceId = aws_instance.assetpulse.id
+    InstanceId = aws_instance.quantumledger.id
   }
 }
 
 # Key Pair
-resource "tls_private_key" "assetpulse" {
+resource "tls_private_key" "quantumledger" {
   algorithm = "RSA"
   rsa_bits  = 4096
 }
 
-resource "aws_key_pair" "assetpulse" {
-  key_name   = "assetpulse-key"
-  public_key = tls_private_key.assetpulse.public_key_openssh
+resource "aws_key_pair" "quantumledger" {
+  key_name   = "quantumledger-key"
+  public_key = tls_private_key.quantumledger.public_key_openssh
 }
 
 resource "local_file" "private_key" {
-  content         = tls_private_key.assetpulse.private_key_pem
-  filename        = "${path.module}/assetpulse-key.pem"
+  content         = tls_private_key.quantumledger.private_key_pem
+  filename        = "${path.module}/quantumledger-key.pem"
   file_permission = "0400"
 }
 
 # Elastic IP for EC2
-resource "aws_eip" "assetpulse" {
-  instance = aws_instance.assetpulse.id
+resource "aws_eip" "quantumledger" {
+  instance = aws_instance.quantumledger.id
   domain   = "vpc"
 
   tags = {
-    Name = "AssetPulse-EIP"
+    Name = "QuantumLedger-EIP"
   }
 
-  depends_on = [aws_internet_gateway.assetpulse]
+  depends_on = [aws_internet_gateway.quantumledger]
 }
 
 # Data source for Ubuntu AMI
@@ -348,28 +348,28 @@ data "aws_ami" "ubuntu" {
 
 # Outputs
 output "instance_public_ip" {
-  description = "Public IP of AssetPulse server"
-  value       = aws_eip.assetpulse.public_ip
+  description = "Public IP of QuantumLedger server"
+  value       = aws_eip.quantumledger.public_ip
 }
 
 output "instance_public_dns" {
-  description = "Public DNS of AssetPulse server"
-  value       = aws_instance.assetpulse.public_dns
+  description = "Public DNS of QuantumLedger server"
+  value       = aws_instance.quantumledger.public_dns
 }
 
 output "rds_endpoint" {
   description = "RDS Database endpoint"
-  value       = aws_db_instance.assetpulse.address
+  value       = aws_db_instance.quantumledger.address
 }
 
 output "live_app_url" {
-  description = "LIVE AssetPulse Application URL"
-  value       = "http://${aws_eip.assetpulse.public_ip}:8000"
+  description = "LIVE QuantumLedger Application URL"
+  value       = "http://${aws_eip.quantumledger.public_ip}:8000"
 }
 
 output "api_docs_url" {
   description = "API Documentation (Swagger)"
-  value       = "http://${aws_eip.assetpulse.public_ip}:8000/docs"
+  value       = "http://${aws_eip.quantumledger.public_ip}:8000/docs"
 }
 
 output "private_key_path" {

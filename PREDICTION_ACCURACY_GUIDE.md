@@ -1,4 +1,4 @@
-# 📈 AssetPulse: 90%+ Profit Prediction Accuracy Guide
+# 📈 QuantumLedger: 90%+ Profit Prediction Accuracy Guide
 
 ## 🎯 Our Approach: 5-Model Ensemble
 

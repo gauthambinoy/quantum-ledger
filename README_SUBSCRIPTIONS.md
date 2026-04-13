@@ -1,6 +1,6 @@
-# AssetPulse Premium Subscription System
+# QuantumLedger Premium Subscription System
 
-Complete premium subscription system with Stripe integration for monetizing AssetPulse.
+Complete premium subscription system with Stripe integration for monetizing QuantumLedger.
 
 ## Overview
 
@@ -378,7 +378,7 @@ Planned features:
 
 ## License
 
-Part of AssetPulse. See LICENSE for details.
+Part of QuantumLedger. See LICENSE for details.
 
 ## Support
 

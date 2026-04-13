@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "🚀 Starting AssetPulse deployment (NEVER GOES DOWN)..."
+echo "🚀 Starting QuantumLedger deployment (NEVER GOES DOWN)..."
 
 # Update system
 apt-get update
@@ -32,13 +32,13 @@ systemctl restart docker
 
 # Clone repository
 cd /home/ubuntu
-git clone ${repo_url} assetpulse 2>/dev/null || (cd assetpulse && git pull origin main)
-cd assetpulse
+git clone ${repo_url} quantumledger 2>/dev/null || (cd quantumledger && git pull origin main)
+cd quantumledger
 git pull origin main
 
 # Create environment file with all API keys
 cat > .env << 'ENV'
-DATABASE_URL=postgresql://assetpulse:${db_password}@${db_host}:${db_port}/assetpulse
+DATABASE_URL=postgresql://quantumledger:${db_password}@${db_host}:${db_port}/quantumledger
 NEWSAPI_KEY=${newsapi_key}
 FRED_API_KEY=${fred_api_key}
 JWT_SECRET_KEY=${jwt_secret}
@@ -55,10 +55,10 @@ echo "Starting services (auto-restart enabled)..."
 docker-compose up -d
 
 # Wait for services to become healthy
-echo "Waiting for AssetPulse to start..."
+echo "Waiting for QuantumLedger to start..."
 for i in {1..30}; do
   if curl -f http://localhost:8000/health > /dev/null 2>&1; then
-    echo "✅ AssetPulse is HEALTHY and RUNNING!"
+    echo "✅ QuantumLedger is HEALTHY and RUNNING!"
     break
   fi
   echo "  Checking... ($i/30 attempts)"
@@ -67,9 +67,9 @@ done
 
 # Create systemd service for guaranteed auto-restart
 echo "Setting up auto-restart service..."
-cat > /etc/systemd/system/assetpulse-docker.service << 'SERVICE'
+cat > /etc/systemd/system/quantumledger-docker.service << 'SERVICE'
 [Unit]
-Description=AssetPulse - Always Running Docker Service
+Description=QuantumLedger - Always Running Docker Service
 After=docker.service network-online.target
 Wants=network-online.target
 Requires=docker.service
@@ -77,14 +77,14 @@ Requires=docker.service
 [Service]
 Type=simple
 User=ubuntu
-WorkingDirectory=/home/ubuntu/assetpulse
+WorkingDirectory=/home/ubuntu/quantumledger
 ExecStart=/usr/bin/docker-compose up
 ExecStop=/usr/bin/docker-compose down
 Restart=always
 RestartSec=10
 StandardOutput=journal
 StandardError=journal
-SyslogIdentifier=assetpulse
+SyslogIdentifier=quantumledger
 
 # Limits
 TimeoutStartSec=120
@@ -96,12 +96,12 @@ SERVICE
 
 # Enable and start the systemd service
 systemctl daemon-reload
-systemctl enable assetpulse-docker
-systemctl start assetpulse-docker
+systemctl enable quantumledger-docker
+systemctl start quantumledger-docker
 
 # Setup log rotation
-cat > /etc/logrotate.d/assetpulse << 'LOGROTATE'
-/home/ubuntu/assetpulse/data/*.log {
+cat > /etc/logrotate.d/quantumledger << 'LOGROTATE'
+/home/ubuntu/quantumledger/data/*.log {
     daily
     missingok
     rotate 7
@@ -121,7 +121,7 @@ curl http://localhost:8000/health
 
 echo ""
 echo "=========================================="
-echo "✅ ASSETPULSE DEPLOYED SUCCESSFULLY!"
+echo "✅ QUANTUMLEDGER DEPLOYED SUCCESSFULLY!"
 echo "=========================================="
 echo "🚀 Service: RUNNING (with auto-restart)"
 echo "🔄 Restart Policy: Always (infinite retries)"

@@ -1,26 +1,26 @@
-# 📋 ASSETPULSE DEPLOYMENT PLAN
+# 📋 QUANTUMLEDGER DEPLOYMENT PLAN
 
 ## Phase 0: Pre-Deployment Verification ✅
 
 ### Verify All Files Are Ready
 ```bash
 # Check Terraform files exist
-ls -la /home/gautham/cryptostock-pro/terraform/
+ls -la /home/gautham/quantum-ledger/terraform/
 # Should show: main.tf, variables.tf, user_data.sh, terraform.tfvars.example
 
 # Check Docker files exist
-ls -la /home/gautham/cryptostock-pro/
+ls -la /home/gautham/quantum-ledger/
 # Should show: Dockerfile, docker-compose.yml
 
 # Check Backend code exists
-ls -la /home/gautham/cryptostock-pro/backend/
+ls -la /home/gautham/quantum-ledger/backend/
 # Should show: app/ (with all services, routers, etc)
 ```
 
 ### Verify Documentation Files
 ```bash
 # Check all guides exist
-ls /home/gautham/cryptostock-pro/*.md | head -20
+ls /home/gautham/quantum-ledger/*.md | head -20
 # Should show: README_DEPLOYMENT.md, FINAL_DEPLOYMENT_SUMMARY.md, etc
 ```
 
@@ -119,8 +119,8 @@ aws s3 ls
 ### Step 3.1: Navigate to Terraform Directory
 
 ```bash
-cd /home/gautham/cryptostock-pro/terraform
-pwd  # Should show: /home/gautham/cryptostock-pro/terraform
+cd /home/gautham/quantum-ledger/terraform
+pwd  # Should show: /home/gautham/quantum-ledger/terraform
 ```
 
 ### Step 3.2: Copy Configuration Template
@@ -142,8 +142,8 @@ aws_region       = "us-east-1"                    # Keep as is
 db_password      = "ChangeMe123!@#"              # CHANGE THIS - your secure password
 newsapi_key      = "test"                         # Can add real key later
 fred_api_key     = "test"                         # Can add real key later
-jwt_secret_key   = "assetpulse-secret-key"       # Change if you want
-github_repo_url  = "https://github.com/gauthambinoy/cryptostock-pro.git"  # Keep as is
+jwt_secret_key   = "quantumledger-secret-key"       # Change if you want
+github_repo_url  = "https://github.com/gauthambinoy/quantum-ledger.git"  # Keep as is
 ```
 
 **Save:** Ctrl+X → Y → Enter
@@ -270,8 +270,8 @@ api_docs_url = "http://54.XXX.XXX.XXX:8000/docs"
 instance_public_dns = "ec2-54-xxx-xxx-xxx.compute-1.amazonaws.com"
 instance_public_ip = "54.XXX.XXX.XXX"
 live_app_url = "http://54.XXX.XXX.XXX:8000"
-private_key_path = "./assetpulse-key.pem"
-rds_endpoint = "assetpulse-db.xxxxx.us-east-1.rds.amazonaws.com"
+private_key_path = "./quantumledger-key.pem"
+rds_endpoint = "quantumledger-db.xxxxx.us-east-1.rds.amazonaws.com"
 ```
 
 ### Step 7.2: Save Your Information
@@ -279,17 +279,17 @@ rds_endpoint = "assetpulse-db.xxxxx.us-east-1.rds.amazonaws.com"
 ```bash
 # Create a file to save your deployment info
 cat > MY_DEPLOYMENT_INFO.txt << 'INFO'
-=== ASSETPULSE DEPLOYMENT INFO ===
+=== QUANTUMLEDGER DEPLOYMENT INFO ===
 
 Live App URL: http://YOUR-IP:8000
 API Docs URL: http://YOUR-IP:8000/docs
 EC2 Public IP: YOUR-IP
 EC2 Public DNS: YOUR-DNS
 
-SSH Command: ssh -i terraform/assetpulse-key.pem ubuntu@YOUR-IP
+SSH Command: ssh -i terraform/quantumledger-key.pem ubuntu@YOUR-IP
 RDS Endpoint: YOUR-RDS-ENDPOINT
-Database: assetpulse
-Username: assetpulse
+Database: quantumledger
+Username: quantumledger
 
 Deployment Date: $(date)
 Deployment Status: ✅ COMPLETE
@@ -330,7 +330,7 @@ http://54.XXX.XXX.XXX:8000
 ### Step 8.3: SSH into Server
 
 ```bash
-ssh -i terraform/assetpulse-key.pem ubuntu@54.XXX.XXX.XXX
+ssh -i terraform/quantumledger-key.pem ubuntu@54.XXX.XXX.XXX
 
 # You should see:
 # Ubuntu 22.04 LTS
@@ -344,8 +344,8 @@ ssh -i terraform/assetpulse-key.pem ubuntu@54.XXX.XXX.XXX
 docker ps
 
 # Should show:
-# - assetpulse-backend (running)
-# - assetpulse-redis (running)
+# - quantumledger-backend (running)
+# - quantumledger-redis (running)
 ```
 
 ### Step 8.5: Check Logs
@@ -355,7 +355,7 @@ docker ps
 docker-compose logs backend
 
 # Should show:
-# ✅ "Starting AssetPulse..."
+# ✅ "Starting QuantumLedger..."
 # ✅ "Database initialized"
 # ✅ "Application running"
 
@@ -430,7 +430,7 @@ exit
 # Go to AWS Console
 # Search: SNS
 # Click: Topics
-# Find: assetpulse-alerts
+# Find: quantumledger-alerts
 # Click on topic
 # Click: Create subscription
 # Protocol: Email
@@ -458,16 +458,16 @@ exit
 
 ```bash
 # Copy terraform state and config
-cp -r terraform ~/assetpulse-backup/
+cp -r terraform ~/quantumledger-backup/
 
 # Copy deployment info
-cp MY_DEPLOYMENT_INFO.txt ~/assetpulse-backup/
+cp MY_DEPLOYMENT_INFO.txt ~/quantumledger-backup/
 
 # Save your AWS credentials safely
-cp ~/.aws/credentials ~/assetpulse-backup/aws-credentials-backup
+cp ~/.aws/credentials ~/quantumledger-backup/aws-credentials-backup
 
 # Save the private key safely
-cp terraform/assetpulse-key.pem ~/assetpulse-backup/
+cp terraform/quantumledger-key.pem ~/quantumledger-backup/
 ```
 
 ### Step 11.2: Document Everything
@@ -490,7 +490,7 @@ cat > DEPLOYMENT_COMPLETE.md << 'DOC'
 - Auto-restart: 4 layers (never goes down)
 
 ## Files to Keep Safe
-- terraform/assetpulse-key.pem (SSH key)
+- terraform/quantumledger-key.pem (SSH key)
 - ~/.aws/credentials (AWS credentials)
 - MY_DEPLOYMENT_INFO.txt (deployment info)
 - terraform/terraform.tfvars (configuration)
@@ -502,7 +502,7 @@ cat > DEPLOYMENT_COMPLETE.md << 'DOC'
 4. Update API keys when ready (NewsAPI, FRED, etc)
 
 ## Support
-- Logs: ssh -i terraform/assetpulse-key.pem ubuntu@IP && docker-compose logs
+- Logs: ssh -i terraform/quantumledger-key.pem ubuntu@IP && docker-compose logs
 - AWS Console: https://aws.amazon.com
 - Terraform: terraform state show
 DOC
@@ -572,7 +572,7 @@ cat ~/.aws/credentials
 ```bash
 # Wait longer (EC2 takes 5-10 minutes to fully start)
 # Check logs when SSH is available:
-ssh -i terraform/assetpulse-key.pem ubuntu@IP
+ssh -i terraform/quantumledger-key.pem ubuntu@IP
 docker-compose logs backend
 ```
 
@@ -586,7 +586,7 @@ docker-compose logs backend
 ### "Need to restart everything"
 ```bash
 # SSH into server
-ssh -i terraform/assetpulse-key.pem ubuntu@IP
+ssh -i terraform/quantumledger-key.pem ubuntu@IP
 
 # Restart Docker
 docker-compose down

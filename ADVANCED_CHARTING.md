@@ -1,4 +1,4 @@
-# Advanced Charting System - AssetPulse
+# Advanced Charting System - QuantumLedger
 
 ## Overview
 Professional-grade charting system with 50+ technical indicators, real-time price updates, and interactive analysis tools built with TradingView Lightweight Charts library.

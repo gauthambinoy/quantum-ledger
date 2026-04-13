@@ -1,4 +1,4 @@
-# AssetPulse Mobile App - Complete Files Manifest
+# QuantumLedger Mobile App - Complete Files Manifest
 
 ## Project Summary
 - **Total Files**: 37
@@ -12,7 +12,7 @@
 ## Directory Structure
 
 ```
-cryptostock-pro/
+quantum-ledger/
 └── mobile/
     ├── src/
     │   ├── screens/           (11 files)
@@ -898,7 +898,7 @@ EXPO_PUBLIC_LOG_LEVEL=debug
 
 ---
 
-## All Files Created in `/home/gautham/cryptostock-pro/mobile/`
+## All Files Created in `/home/gautham/quantum-ledger/mobile/`
 
 ✅ All 37+ files ready for deployment
 ✅ ~3,500+ lines of production code

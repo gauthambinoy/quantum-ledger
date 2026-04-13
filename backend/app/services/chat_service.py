@@ -1,5 +1,5 @@
 """
-AI Chat Service for AssetPulse
+AI Chat Service for QuantumLedger
 Provides intelligent conversational interface using Claude API with contextual market data
 """
 import logging
@@ -19,7 +19,7 @@ class ChatService:
         self.client = Anthropic(api_key=api_key)
         self.conversation_history = []
         self.max_history = 10
-        self.system_prompt = """You are AssetPulse AI, an expert financial advisor for cryptocurrency and stock investments.
+        self.system_prompt = """You are QuantumLedger AI, an expert financial advisor for cryptocurrency and stock investments.
 You provide:
 - Clear, actionable investment advice
 - Real-time market analysis and predictions

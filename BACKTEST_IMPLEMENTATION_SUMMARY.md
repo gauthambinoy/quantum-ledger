@@ -1,7 +1,7 @@
 # Backtesting Engine - Implementation Summary
 
 ## Overview
-Successfully implemented a comprehensive Backtesting Engine for AssetPulse that enables users to test investment strategies on historical data with professional-grade risk metrics and analysis.
+Successfully implemented a comprehensive Backtesting Engine for QuantumLedger that enables users to test investment strategies on historical data with professional-grade risk metrics and analysis.
 
 ## Time Allocation: 7-8 Hours
 - Architecture & Design: 1.5 hours
@@ -335,4 +335,4 @@ The Backtesting Engine is production-ready with:
 - Scalable architecture for future enhancements
 - Complete documentation and testing guide
 
-The implementation enables AssetPulse users to validate investment strategies against real historical data, understand risk metrics, and make more informed investment decisions.
+The implementation enables QuantumLedger users to validate investment strategies against real historical data, understand risk metrics, and make more informed investment decisions.

@@ -1,5 +1,5 @@
 ---
-title: CryptoStock Pro
+title: QuantumLedger Pro
 emoji: 📈
 colorFrom: blue
 colorTo: green
@@ -8,7 +8,7 @@ pinned: false
 license: mit
 ---
 
-# CryptoStock Pro
+# QuantumLedger Pro
 
 A professional real-time Stock and Cryptocurrency Portfolio Tracker.
 

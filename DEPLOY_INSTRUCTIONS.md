@@ -35,13 +35,13 @@ Default output format: json
 Copy and paste this command in your terminal:
 
 ```bash
-bash -c 'set -e; cd /tmp; rm -rf assetpulse-deploy; mkdir assetpulse-deploy; cd assetpulse-deploy; git clone https://github.com/gauthambinoy/cryptostock-pro.git; cd cryptostock-pro/terraform; cat > terraform.tfvars << "EOF"
+bash -c 'set -e; cd /tmp; rm -rf quantumledger-deploy; mkdir quantumledger-deploy; cd quantumledger-deploy; git clone https://github.com/gauthambinoy/quantum-ledger.git; cd quantum-ledger/terraform; cat > terraform.tfvars << "EOF"
 aws_region = "us-east-1"
-db_password = "AssetPulse2024!SecurePass123"
+db_password = "QuantumLedger2024!SecurePass123"
 newsapi_key = "test"
 fred_api_key = "test"
-jwt_secret_key = "assetpulse-jwt-secret-key-2024"
-github_repo_url = "https://github.com/gauthambinoy/cryptostock-pro.git"
+jwt_secret_key = "quantumledger-jwt-secret-key-2024"
+github_repo_url = "https://github.com/gauthambinoy/quantum-ledger.git"
 EOF
 terraform init && echo "Ready to deploy. Run: terraform apply -auto-approve" && terraform apply -auto-approve && echo "" && echo "✅ DEPLOYMENT COMPLETE!" && echo "" && terraform output'
 ```
@@ -143,7 +143,7 @@ App is still starting. Wait another 2 minutes.
 
 ### SSH into the server
 ```bash
-ssh -i assetpulse-key.pem ubuntu@[YOUR_IP]
+ssh -i quantumledger-key.pem ubuntu@[YOUR_IP]
 docker-compose logs -f
 ```
 
@@ -179,7 +179,7 @@ These will roll out over 4-5 weeks with automatic updates.
 ## Keep Safe
 
 After deployment, save:
-1. **assetpulse-key.pem** - Private SSH key (KEEP SAFE!)
+1. **quantumledger-key.pem** - Private SSH key (KEEP SAFE!)
 2. **terraform.tfvars** - Configuration (KEEP SAFE!)
 3. **Your IP address** - Bookmark app URL
 

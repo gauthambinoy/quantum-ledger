@@ -93,7 +93,7 @@ nano ~/.aws/credentials
 
 ### Step 4: Deploy (15 minutes)
 ```bash
-cd /home/gautham/cryptostock-pro/terraform
+cd /home/gautham/quantum-ledger/terraform
 cp terraform.tfvars.example terraform.tfvars
 nano terraform.tfvars  # Change db_password
 terraform init
@@ -136,7 +136,7 @@ curl http://YOUR-IP:8000/health
 
 After deployment, save:
 ```
-1. terraform/assetpulse-key.pem (SSH key)
+1. terraform/quantumledger-key.pem (SSH key)
 2. ~/.aws/credentials (AWS credentials)
 3. terraform/terraform.tfvars (your config)
 4. Deployment info (your IP, URLs, etc)

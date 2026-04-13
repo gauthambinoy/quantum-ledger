@@ -64,7 +64,7 @@ Save: Ctrl+X, Y, Enter
 
 Go to terraform folder:
 ```bash
-cd /home/gautham/cryptostock-pro/terraform
+cd /home/gautham/quantum-ledger/terraform
 ```
 
 Copy variables:

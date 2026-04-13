@@ -1,6 +1,6 @@
 # Advanced Charting Implementation Summary
 
-## Project: AssetPulse Advanced Charts with TradingView Lightweight Charts
+## Project: QuantumLedger Advanced Charts with TradingView Lightweight Charts
 
 ## Completion Status: ✅ COMPLETE
 
@@ -398,7 +398,7 @@ Created comprehensive documentation:
 ## File Structure
 
 ```
-cryptostock-pro/
+quantum-ledger/
 ├── backend/app/
 │   ├── services/
 │   │   └── indicators_service.py (NEW - 475 lines)
@@ -478,6 +478,6 @@ Frontend:
 
 ## Conclusion
 
-The Advanced Charting system for AssetPulse is fully implemented with professional-grade features including 50+ technical indicators, multiple timeframes, real-time data, and comprehensive analysis tools. The system is production-ready with proper error handling, performance optimization, and complete documentation.
+The Advanced Charting system for QuantumLedger is fully implemented with professional-grade features including 50+ technical indicators, multiple timeframes, real-time data, and comprehensive analysis tools. The system is production-ready with proper error handling, performance optimization, and complete documentation.
 
-All requirements have been met and exceeded. The system is scalable, maintainable, and ready for integration with the rest of the AssetPulse platform.
+All requirements have been met and exceeded. The system is scalable, maintainable, and ready for integration with the rest of the QuantumLedger platform.

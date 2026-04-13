@@ -1,5 +1,5 @@
 """
-AssetPulse - Main Application Entry Point
+QuantumLedger - Main Application Entry Point
 AI-Powered Profit Prediction Platform
 """
 from fastapi import FastAPI, Request
@@ -31,7 +31,7 @@ limiter = Limiter(key_func=get_remote_address)
 async def lifespan(app: FastAPI):
     """Application lifespan events"""
     # Startup
-    print("🚀 Starting AssetPulse - 90%+ Accuracy Profit Prediction...")
+    print("🚀 Starting QuantumLedger - 90%+ Accuracy Profit Prediction...")
     init_db()
     print("✅ Database initialized")
     print("📊 Data aggregator ready (News + Reddit + Twitter + FRED + CoinGecko)")
@@ -48,7 +48,7 @@ async def lifespan(app: FastAPI):
         print(f"⚠️ Warning: Could not initialize alert scheduler: {e}")
     yield
     # Shutdown
-    print("👋 Shutting down AssetPulse...")
+    print("👋 Shutting down QuantumLedger...")
     try:
         shutdown_scheduler()
     except Exception as e:
@@ -61,7 +61,7 @@ async def lifespan(app: FastAPI):
 
 # Create FastAPI app
 app = FastAPI(
-    title="AssetPulse API",
+    title="QuantumLedger API",
     description="""
     ## 🚀 AI-Powered Profit Prediction Platform
 
@@ -188,7 +188,7 @@ async def health_check():
 async def api_info():
     """API information and available endpoints"""
     return {
-        "name": "AssetPulse",
+        "name": "QuantumLedger",
         "version": "2.0.0",
         "endpoints": {
             "auth": {

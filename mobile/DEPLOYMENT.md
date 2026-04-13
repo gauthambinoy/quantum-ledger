@@ -1,4 +1,4 @@
-# AssetPulse Mobile App - Deployment Guide
+# QuantumLedger Mobile App - Deployment Guide
 
 Complete guide for deploying to iOS App Store and Google Play Store.
 
@@ -79,7 +79,7 @@ This will:
 In Apple Developer Portal:
 1. Go to Certificates, Identifiers & Profiles
 2. Create new App ID
-3. Bundle ID: com.assetpulse.mobile
+3. Bundle ID: com.quantumledger.mobile
 4. Enable capabilities (Push Notifications, Face ID)
 
 ### 2. Create Certificates
@@ -99,7 +99,7 @@ Select:
 {
   "expo": {
     "ios": {
-      "bundleIdentifier": "com.assetpulse.mobile"
+      "bundleIdentifier": "com.quantumledger.mobile"
     }
   }
 }
@@ -150,12 +150,12 @@ In Google Play Console:
 
 ```bash
 # Generate signing key
-keytool -genkey-pair -v -keystore assetpulse.keystore \
+keytool -genkey-pair -v -keystore quantumledger.keystore \
   -keyalg RSA -keysize 2048 -validity 10000 \
-  -alias assetpulse-key
+  -alias quantumledger-key
 
 # Display key fingerprint
-keytool -list -v -keystore assetpulse.keystore
+keytool -list -v -keystore quantumledger.keystore
 ```
 
 Store the keystore file securely (not in git).
@@ -178,7 +178,7 @@ Select:
 {
   "expo": {
     "android": {
-      "package": "com.assetpulse.mobile",
+      "package": "com.quantumledger.mobile",
       "versionCode": 1
     }
   }

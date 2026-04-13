@@ -84,7 +84,7 @@ Save: Ctrl+X → Y → Enter
 
 ### Step 4: Deploy! (10 minutes)
 ```bash
-cd /home/gautham/cryptostock-pro/terraform
+cd /home/gautham/quantum-ledger/terraform
 
 # Copy example config
 cp terraform.tfvars.example terraform.tfvars
@@ -113,7 +113,7 @@ Outputs:
 
 live_app_url = "http://54.123.45.67:8000"
 api_docs_url = "http://54.123.45.67:8000/docs"
-private_key_path = "./assetpulse-key.pem"
+private_key_path = "./quantumledger-key.pem"
 instance_public_ip = "54.123.45.67"
 ```
 
@@ -238,12 +238,12 @@ Add to EC2 security group:
 
 ### App not running after deployment
 - Wait 5-10 more minutes (EC2 takes time to start)
-- SSH in: `ssh -i terraform/assetpulse-key.pem ubuntu@YOUR-IP`
+- SSH in: `ssh -i terraform/quantumledger-key.pem ubuntu@YOUR-IP`
 - Check logs: `docker-compose logs backend`
 
 ### Can't SSH to server
-- Make sure you have `assetpulse-key.pem` file
-- Check file permissions: `chmod 400 assetpulse-key.pem`
+- Make sure you have `quantumledger-key.pem` file
+- Check file permissions: `chmod 400 quantumledger-key.pem`
 - Verify IP address from Terraform output
 
 ### Need to tear down
@@ -314,7 +314,7 @@ When deployed, your live app has:
 
 ---
 
-**You're all set! AssetPulse is ready to deploy on AWS!** 🚀
+**You're all set! QuantumLedger is ready to deploy on AWS!** 🚀
 
 Run the 3 commands and you'll have a live production platform in 10 minutes!
 

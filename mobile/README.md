@@ -1,4 +1,4 @@
-# AssetPulse Mobile App
+# QuantumLedger Mobile App
 
 Smart investment analytics and portfolio management on your mobile device.
 
@@ -152,7 +152,7 @@ mobile/
 
 ## API Integration
 
-The app connects to the AssetPulse backend API. Configure the API endpoint in `.env`:
+The app connects to the QuantumLedger backend API. Configure the API endpoint in `.env`:
 
 ```
 EXPO_PUBLIC_API_URL=http://localhost:3000/api
@@ -309,11 +309,11 @@ expo start --localhost
 
 ## License
 
-Proprietary - AssetPulse Platform
+Proprietary - QuantumLedger Platform
 
 ## Support
 
 For issues and support:
 - GitHub Issues: [Link]
-- Email: support@assetpulse.com
+- Email: support@quantumledger.com
 - Documentation: [Link]

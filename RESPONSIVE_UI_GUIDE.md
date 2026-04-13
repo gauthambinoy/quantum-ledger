@@ -1,4 +1,4 @@
-# AssetPulse - Responsive UI Implementation Guide
+# QuantumLedger - Responsive UI Implementation Guide
 
 ## 📱 Device Breakpoints
 
@@ -51,7 +51,7 @@ All components use Tailwind's responsive prefixes:
 ```html
 <nav class="flex justify-between items-center p-2 md:p-4 lg:p-6">
   <!-- Logo -->
-  <div class="text-lg md:text-2xl font-bold">AssetPulse</div>
+  <div class="text-lg md:text-2xl font-bold">QuantumLedger</div>
   
   <!-- Mobile Menu Toggle -->
   <button class="md:hidden">☰</button>

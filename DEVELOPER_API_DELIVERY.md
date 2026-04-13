@@ -1,4 +1,4 @@
-# AssetPulse Developer API - Delivery Report
+# QuantumLedger Developer API - Delivery Report
 
 **Project:** Monetize Predictions with Developer API
 **Status:** COMPLETE & DEPLOYED ✓
@@ -10,7 +10,7 @@
 
 ## Executive Summary
 
-Successfully delivered a **production-ready Developer API** that enables AssetPulse to monetize AI predictions through tiered API access. The system includes:
+Successfully delivered a **production-ready Developer API** that enables QuantumLedger to monetize AI predictions through tiered API access. The system includes:
 
 - **17 total endpoints** (9 public + 8 developer dashboard)
 - **3-tier pricing** (Free, Pro $9.99, Enterprise $99)
@@ -401,8 +401,8 @@ Models auto-create tables on `init_db()` call on app startup.
 
 ### Step 2: Environment Variables
 ```bash
-ASSETPULSE_API_KEY=ak_xxx
-ASSETPULSE_API_SECRET=secret_xxx
+QUANTUMLEDGER_API_KEY=ak_xxx
+QUANTUMLEDGER_API_SECRET=secret_xxx
 DATABASE_URL=postgresql://...
 ```
 
@@ -526,7 +526,7 @@ commit: feat: Implement Developer API for monetizing predictions
 
 ## Conclusion
 
-The Developer API is **complete, tested, and ready for production deployment**. It provides a robust foundation for monetizing AssetPulse predictions through:
+The Developer API is **complete, tested, and ready for production deployment**. It provides a robust foundation for monetizing QuantumLedger predictions through:
 
 1. **API Access** - 9 endpoints for core functionality
 2. **Rate Limiting** - Per-tier enforcement (100-1000 calls/min)

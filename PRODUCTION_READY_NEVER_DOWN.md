@@ -1,4 +1,4 @@
-# 🚀 ASSETPULSE - PRODUCTION READY (NEVER GOES DOWN)
+# 🚀 QUANTUMLEDGER - PRODUCTION READY (NEVER GOES DOWN)
 
 ## ✅ CODE REVIEWED & FIXED
 
@@ -205,14 +205,14 @@ Total downtime: ~2 minutes (with alerting)
 ### Logs (Searchable)
 ```bash
 # SSH into server
-ssh -i terraform/assetpulse-key.pem ubuntu@YOUR-IP
+ssh -i terraform/quantumledger-key.pem ubuntu@YOUR-IP
 
 # View logs
 docker-compose logs -f backend
 docker-compose logs -f redis
 
 # Check service status
-systemctl status assetpulse-docker
+systemctl status quantumledger-docker
 
 # Check docker status
 docker ps  # All containers should be "Up"
@@ -290,7 +290,7 @@ terraform apply
 ## 🚀 DEPLOY TO AWS
 
 ```bash
-cd /home/gautham/cryptostock-pro/terraform
+cd /home/gautham/quantum-ledger/terraform
 
 # Copy example config
 cp terraform.tfvars.example terraform.tfvars

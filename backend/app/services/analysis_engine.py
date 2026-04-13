@@ -294,7 +294,7 @@ class AnalysisEngine:
             async with httpx.AsyncClient(timeout=8.0) as c:
                 r = await c.get(f"https://www.reddit.com/r/{sub}/search.json",
                     params={"q": symbol, "sort": "new", "limit": 10, "t": "week"},
-                    headers={"User-Agent": "CryptoStockPro/1.0"})
+                    headers={"User-Agent": "QuantumLedgerPro/1.0"})
                 if r.status_code == 200:
                     posts = r.json().get("data", {}).get("children", [])
                     social_mentions = len(posts)

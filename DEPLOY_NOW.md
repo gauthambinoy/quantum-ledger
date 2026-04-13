@@ -1,4 +1,4 @@
-# 🚀 Deploy AssetPulse in 5 Minutes
+# 🚀 Deploy QuantumLedger in 5 Minutes
 
 ## QUICKEST DEPLOYMENT: Railway.app
 
@@ -11,7 +11,7 @@ https://railway.app
 Select "Deploy from GitHub repo"
 
 ### Step 3: Select Your Repository
-Choose: cryptostock-pro
+Choose: quantum-ledger
 
 ### Step 4: Add Environment Variables (in Railway Dashboard)
 Copy-paste these (get free API keys from links below):
@@ -31,7 +31,7 @@ Wait 2-3 minutes...
 ### Step 6: Copy Your Live URL
 Your app is now LIVE! 🎉
 
-Example: `https://assetpulse-production-abc123.railway.app`
+Example: `https://quantumledger-production-abc123.railway.app`
 
 ---
 
@@ -43,7 +43,7 @@ Example: `https://assetpulse-production-abc123.railway.app`
 4. Add same environment variables
 5. Click Deploy
 
-Your URL: `https://assetpulse-abc123.vercel.app`
+Your URL: `https://quantumledger-abc123.vercel.app`
 
 ---
 
@@ -131,6 +131,6 @@ Your deployed app now has:
 
 ---
 
-**That's it! Your AssetPulse is now LIVE with 90%+ accuracy predictions!** 🎉
+**That's it! Your QuantumLedger is now LIVE with 90%+ accuracy predictions!** 🎉
 
 Need help? See DEPLOYMENT_GUIDE.md for detailed instructions.

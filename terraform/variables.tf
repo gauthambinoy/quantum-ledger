@@ -7,7 +7,7 @@ variable "aws_region" {
 variable "github_repo_url" {
   description = "GitHub repository URL"
   type        = string
-  default     = "https://github.com/gauthambinoy/cryptostock-pro.git"
+  default     = "https://github.com/gauthambinoy/quantum-ledger.git"
 }
 
 variable "db_password" {
@@ -31,5 +31,5 @@ variable "fred_api_key" {
 variable "jwt_secret_key" {
   description = "JWT secret key"
   type        = string
-  default     = "assetpulse-secret-key-change-in-production"
+  default     = "quantumledger-secret-key-change-in-production"
 }

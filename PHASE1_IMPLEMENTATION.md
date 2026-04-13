@@ -1,4 +1,4 @@
-# AssetPulse - Phase 1: Quick Wins Implementation (1-2 weeks)
+# QuantumLedger - Phase 1: Quick Wins Implementation (1-2 weeks)
 
 ## 🎯 Phase 1 Deliverables
 
@@ -26,7 +26,7 @@ conversation_history = []
 async def chat_with_claude(user_message, symbol=None, portfolio=None):
     # Build context from aggregated data
     context = f"""
-    You are AssetPulse AI assistant - a financial advisor.
+    You are QuantumLedger AI assistant - a financial advisor.
     Current symbol: {symbol}
     Portfolio: {portfolio}
     Latest prediction: {get_latest_prediction(symbol)}
@@ -79,7 +79,7 @@ async def chat_with_claude(user_message, symbol=None, portfolio=None):
 
 **Email Template Example:**
 ```html
-<h2>🎯 AssetPulse Daily Digest</h2>
+<h2>🎯 QuantumLedger Daily Digest</h2>
 <p>Your Top 5 Opportunities Today:</p>
 <table>
   <tr>

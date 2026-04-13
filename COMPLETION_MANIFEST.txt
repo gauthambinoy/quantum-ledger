@@ -2,7 +2,7 @@
 COMMUNITY LEADERBOARD FEATURE - COMPLETION MANIFEST
 ================================================================================
 
-PROJECT: AssetPulse - Community Leaderboard Feature
+PROJECT: QuantumLedger - Community Leaderboard Feature
 COMPLETION DATE: April 2, 2026
 STATUS: ✅ FULLY COMPLETE AND PRODUCTION-READY
 
@@ -467,7 +467,7 @@ VERIFICATION:
 CONCLUSION
 ================================================================================
 
-The Community Leaderboard feature for AssetPulse has been successfully
+The Community Leaderboard feature for QuantumLedger has been successfully
 completed and is ready for production deployment.
 
 DELIVERABLES:
@@ -495,7 +495,7 @@ STATUS: ✅ COMPLETE AND PRODUCTION-READY
 BUILD SIGN-OFF
 ================================================================================
 
-Feature: Community Leaderboard for AssetPulse
+Feature: Community Leaderboard for QuantumLedger
 Completion Date: April 2, 2026
 Developer: Claude AI Agent
 Status: ✅ COMPLETE

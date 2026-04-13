@@ -1,5 +1,5 @@
 """
-Developer API v1.0 - Public API for AssetPulse predictions and data
+Developer API v1.0 - Public API for QuantumLedger predictions and data
 Monetized API endpoints with rate limiting and usage tracking
 """
 from fastapi import APIRouter, Depends, HTTPException, Header, status, Query
@@ -409,7 +409,7 @@ async def get_fear_greed(
 @router.get(
     "/leaderboard",
     summary="Top Traders",
-    description="Get leaderboard of top performing traders on AssetPulse"
+    description="Get leaderboard of top performing traders on QuantumLedger"
 )
 async def get_leaderboard(
     limit: int = Query(10, ge=1, le=100),

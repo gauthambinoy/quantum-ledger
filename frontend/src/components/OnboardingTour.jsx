@@ -5,7 +5,7 @@ import { Sparkles, ArrowRight, X, Rocket, LayoutDashboard, Plus, TrendingUp, Bel
 const STEPS = [
   {
     id: 'welcome',
-    title: 'Welcome to CryptoStock Pro!',
+    title: 'Welcome to QuantumLedger Pro!',
     description: 'Your all-in-one platform for tracking crypto and stock investments. Let us show you around.',
     target: null,
     icon: Sparkles,

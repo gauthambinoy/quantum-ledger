@@ -24,7 +24,7 @@ class Settings(BaseSettings):
 
     # Email Service (SendGrid)
     sendgrid_api_key: str = ""
-    sendgrid_from_email: str = "noreply@assetpulse.ai"
+    sendgrid_from_email: str = "noreply@quantumledger.ai"
 
     # SMS Service (Twilio)
     twilio_account_sid: str = ""

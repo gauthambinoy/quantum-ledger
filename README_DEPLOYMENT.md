@@ -1,4 +1,4 @@
-# 🚀 ASSETPULSE - DEPLOYMENT GUIDE INDEX
+# 🚀 QUANTUMLEDGER - DEPLOYMENT GUIDE INDEX
 
 ## START HERE 👇
 
@@ -53,7 +53,7 @@ nano ~/.aws/credentials
 # Paste your AWS credentials from CSV
 
 # 3. Deploy
-cd /home/gautham/cryptostock-pro/terraform
+cd /home/gautham/quantum-ledger/terraform
 cp terraform.tfvars.example terraform.tfvars
 nano terraform.tfvars  # Edit database password
 terraform init
@@ -94,7 +94,7 @@ terraform apply  # Type: yes
 
 **Issues during deployment?**
 - Check `FINAL_DEPLOYMENT_SUMMARY.md` → Troubleshooting section
-- Check logs: `ssh -i terraform/assetpulse-key.pem ubuntu@YOUR-IP && docker-compose logs`
+- Check logs: `ssh -i terraform/quantumledger-key.pem ubuntu@YOUR-IP && docker-compose logs`
 
 **Want to understand how it works?**
 - Read `PRODUCTION_READY_NEVER_DOWN.md` (full architecture)

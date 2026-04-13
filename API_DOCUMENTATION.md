@@ -1,10 +1,10 @@
-# AssetPulse Developer API v1.0
+# QuantumLedger Developer API v1.0
 
 > Monetized API for AI-Powered Asset Predictions and Market Data
 
 ## Overview
 
-AssetPulse Developer API provides programmatic access to:
+QuantumLedger Developer API provides programmatic access to:
 - **90%+ Accuracy AI Predictions** for stocks and crypto
 - **Sentiment Analysis** from 1000+ news sources + social media
 - **Trading Signals** based on technical and ML analysis
@@ -17,7 +17,7 @@ AssetPulse Developer API provides programmatic access to:
 
 ### 1. Generate API Key
 
-1. Navigate to [Dashboard](https://assetpulse.ai/dashboard)
+1. Navigate to [Dashboard](https://quantumledger.ai/dashboard)
 2. Go to **Developer** → **API Keys**
 3. Click **Create New Key**
 4. Save your API Key and Secret securely
@@ -25,7 +25,7 @@ AssetPulse Developer API provides programmatic access to:
 ### 2. Make Your First Request
 
 ```bash
-curl -X GET "https://assetpulse.ai/api/v1/prediction/BTC" \
+curl -X GET "https://quantumledger.ai/api/v1/prediction/BTC" \
   -H "Authorization: Bearer YOUR_API_KEY:YOUR_API_SECRET" \
   -H "Content-Type: application/json"
 ```
@@ -71,7 +71,7 @@ headers = {
 }
 
 response = requests.get(
-    "https://assetpulse.ai/api/v1/prediction/BTC",
+    "https://quantumledger.ai/api/v1/prediction/BTC",
     headers=headers
 )
 ```
@@ -381,13 +381,13 @@ Check API status and current rate limit.
 ### Python SDK
 
 ```bash
-pip install assetpulse
+pip install quantumledger
 ```
 
 ```python
-import assetpulse
+import quantumledger
 
-client = assetpulse.APIClient(
+client = quantumledger.APIClient(
     api_key="ak_xxx",
     api_secret="secret_xxx"
 )
@@ -413,13 +413,13 @@ print(f"Signal: {signals.overall_signal}")
 ### JavaScript SDK
 
 ```bash
-npm install assetpulse-js
+npm install quantumledger-js
 ```
 
 ```javascript
-const AssetPulse = require('assetpulse-js');
+const QuantumLedger = require('quantumledger-js');
 
-const client = new AssetPulse({
+const client = new QuantumLedger({
   apiKey: 'ak_xxx',
   apiSecret: 'secret_xxx'
 });
@@ -447,11 +447,11 @@ console.log(`Signal: ${signals.overall_signal}`);
 
 ### 1. Robo-Advisor Integration
 
-Automate trading based on AssetPulse predictions:
+Automate trading based on QuantumLedger predictions:
 
 ```python
 def run_trading_bot():
-    client = assetpulse.APIClient(api_key, api_secret)
+    client = quantumledger.APIClient(api_key, api_secret)
     
     for symbol in ["BTC", "AAPL", "TSLA"]:
         prediction = client.get_prediction(symbol)
@@ -474,7 +474,7 @@ import discord
 from discord.ext import commands, tasks
 
 bot = commands.Bot()
-client = assetpulse.APIClient(api_key, api_secret)
+client = quantumledger.APIClient(api_key, api_secret)
 
 @tasks.loop(hours=24)
 async def post_daily_predictions():
@@ -500,7 +500,7 @@ from slack_sdk import WebClient
 import asyncio
 
 slack = WebClient(token='xoxb-xxx')
-client = assetpulse.APIClient(api_key, api_secret)
+client = quantumledger.APIClient(api_key, api_secret)
 
 async def monitor_predictions():
     while True:
@@ -520,9 +520,9 @@ async def monitor_predictions():
 
 ```javascript
 // React Native example
-import AssetPulse from 'assetpulse-js';
+import QuantumLedger from 'quantumledger-js';
 
-const client = new AssetPulse({
+const client = new QuantumLedger({
   apiKey: API_KEY,
   apiSecret: API_SECRET
 });
@@ -655,7 +655,7 @@ def verify_webhook_signature(payload, signature, secret):
 # In your webhook handler
 @app.post("/webhook")
 def handle_webhook(request):
-    signature = request.headers.get("X-AssetPulse-Signature")
+    signature = request.headers.get("X-QuantumLedger-Signature")
     payload = request.body
     
     if not verify_webhook_signature(payload, signature, WEBHOOK_SECRET):
@@ -697,10 +697,10 @@ def handle_webhook(request):
 
 ## Support
 
-- **Email:** support@assetpulse.ai
-- **Discord:** [Join Community](https://discord.gg/assetpulse)
-- **Documentation:** [Full API Docs](https://assetpulse.ai/docs)
-- **Status Page:** [status.assetpulse.ai](https://status.assetpulse.ai)
+- **Email:** support@quantumledger.ai
+- **Discord:** [Join Community](https://discord.gg/quantumledger)
+- **Documentation:** [Full API Docs](https://quantumledger.ai/docs)
+- **Status Page:** [status.quantumledger.ai](https://status.quantumledger.ai)
 
 ## Changelog
 

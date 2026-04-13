@@ -328,8 +328,8 @@ class WebhookManager:
 
             headers = {
                 "Content-Type": "application/json",
-                "X-AssetPulse-Signature": signature,
-                "X-AssetPulse-Event": event_type
+                "X-QuantumLedger-Signature": signature,
+                "X-QuantumLedger-Event": event_type
             }
 
             async with httpx.AsyncClient(timeout=10.0) as client:

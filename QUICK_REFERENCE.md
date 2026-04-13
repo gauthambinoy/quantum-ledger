@@ -1,4 +1,4 @@
-# ⚡ AssetPulse - Quick Reference Card
+# ⚡ QuantumLedger - Quick Reference Card
 
 ## 🚀 90% ACCURACY IN 3 HOURS
 
@@ -117,7 +117,7 @@ export default function Navigation() {
     <nav className="flex justify-between items-center p-2 md:p-4 lg:p-6 bg-slate-900">
       {/* Logo */}
       <div className="text-xl md:text-2xl font-bold text-blue-400">
-        AssetPulse
+        QuantumLedger
       </div>
 
       {/* Mobile Menu Button */}
@@ -239,7 +239,7 @@ export default function PortfolioGrid({ portfolios }) {
 
 ## 🚀 DEPLOYMENT CHECKLIST
 
-- [ ] Rename all files: CryptoStock → AssetPulse
+- [ ] Rename all files: QuantumLedger → QuantumLedger
 - [ ] Update README.md
 - [ ] Add sentiment analysis (copy-paste code above)
 - [ ] Make all UI responsive (use patterns above)

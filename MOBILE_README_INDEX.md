@@ -1,4 +1,4 @@
-# AssetPulse Mobile App - Documentation Index
+# QuantumLedger Mobile App - Documentation Index
 
 Complete guide to all documentation files for the mobile application.
 
@@ -17,7 +17,7 @@ Complete guide to all documentation files for the mobile application.
 ## Documentation Files Location
 
 ```
-cryptostock-pro/
+quantum-ledger/
 ├── mobile/
 │   ├── README.md                    ← Setup & Usage Guide (START HERE)
 │   ├── DEPLOYMENT.md                ← Production Deployment

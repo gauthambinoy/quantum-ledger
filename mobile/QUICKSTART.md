@@ -1,4 +1,4 @@
-# AssetPulse Mobile App - Quick Start Guide
+# QuantumLedger Mobile App - Quick Start Guide
 
 Get up and running in 5 minutes!
 

@@ -130,7 +130,7 @@ const Layout = () => {
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-success-500 flex items-center justify-center">
               <TrendingUp className="w-6 h-6 text-white" />
             </div>
-            <span className="font-bold text-xl">CryptoStock</span>
+            <span className="font-bold text-xl">QuantumLedger</span>
           </div>
           <button
             className="lg:hidden text-gray-400 hover:text-white"

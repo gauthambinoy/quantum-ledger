@@ -64,7 +64,7 @@ export const authService = {
 
       const authenticated = await LocalAuthentication.authenticateAsync({
         disableDeviceFallback: false,
-        reason: 'Authenticate to access AssetPulse',
+        reason: 'Authenticate to access QuantumLedger',
       });
 
       if (!authenticated.success) {

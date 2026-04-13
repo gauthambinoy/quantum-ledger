@@ -1,8 +1,8 @@
-# AssetPulse Developer API - Complete Implementation
+# QuantumLedger Developer API - Complete Implementation
 
 ## Overview
 
-The Developer API for AssetPulse enables third-party developers to monetize AI-powered predictions and market data. This is a comprehensive, production-ready API implementation with:
+The Developer API for QuantumLedger enables third-party developers to monetize AI-powered predictions and market data. This is a comprehensive, production-ready API implementation with:
 
 - **9 API endpoints** for predictions, sentiment, signals, macro data
 - **Tier-based rate limiting** (Free: None, Pro: 100/min, Enterprise: 1000/min)
@@ -96,7 +96,7 @@ Full-featured dashboard with:
 All API endpoints use Bearer token authentication with API Key and Secret:
 
 ```bash
-curl -X GET "https://assetpulse.ai/api/v1/prediction/BTC" \
+curl -X GET "https://quantumledger.ai/api/v1/prediction/BTC" \
   -H "Authorization: Bearer YOUR_API_KEY:YOUR_API_SECRET"
 ```
 
@@ -115,7 +115,7 @@ Volume discounts: 50% off for 1M+ calls/month
 ### 1. Create API Key
 
 ```python
-from assetpulse import APIClient
+from quantumledger import APIClient
 
 client = APIClient(api_key="ak_xxx", api_secret="secret_xxx")
 ```
@@ -140,7 +140,7 @@ print(f"Sentiment: {sentiment.overall_score}")
 ### 3. Monitor Usage
 
 View real-time usage statistics in dashboard:
-https://assetpulse.ai/developer/usage
+https://quantumledger.ai/developer/usage
 
 ## Rate Limiting
 
@@ -396,16 +396,16 @@ print(f"Total Cost: ${stats['total_cost']:.2f}")
 
 ```bash
 # API Configuration
-ASSETPULSE_API_KEY=ak_production_key
-ASSETPULSE_API_SECRET=production_secret
-ASSETPULSE_BASE_URL=https://assetpulse.ai
+QUANTUMLEDGER_API_KEY=ak_production_key
+QUANTUMLEDGER_API_SECRET=production_secret
+QUANTUMLEDGER_BASE_URL=https://quantumledger.ai
 
 # Database
-DATABASE_URL=postgresql://user:pass@localhost/assetpulse
+DATABASE_URL=postgresql://user:pass@localhost/quantumledger
 
 # Email (SendGrid)
 SENDGRID_API_KEY=sg_xxx
-SENDGRID_FROM_EMAIL=noreply@assetpulse.ai
+SENDGRID_FROM_EMAIL=noreply@quantumledger.ai
 ```
 
 ### Database Migration
@@ -475,10 +475,10 @@ logger = logging.getLogger("backend.app.services.api_service")
 
 ## Support
 
-- **Documentation:** https://assetpulse.ai/docs
-- **Email:** support@assetpulse.ai
-- **Discord:** https://discord.gg/assetpulse
-- **GitHub:** https://github.com/assetpulse
+- **Documentation:** https://quantumledger.ai/docs
+- **Email:** support@quantumledger.ai
+- **Discord:** https://discord.gg/quantumledger
+- **GitHub:** https://github.com/quantumledger
 
 ## License
 

@@ -62,15 +62,15 @@ class SMSService:
         try:
             # Build concise SMS message (Twilio charges per SMS, keep it short)
             if message_type == "price_crash":
-                body = f"ASSETPULSE ALERT: {symbol} ⚠️ {details}. Reply STOP to opt-out."
+                body = f"QUANTUMLEDGER ALERT: {symbol} ⚠️ {details}. Reply STOP to opt-out."
             elif message_type == "price_surge":
-                body = f"ASSETPULSE ALERT: {symbol} 📈 {details}. Reply STOP to opt-out."
+                body = f"QUANTUMLEDGER ALERT: {symbol} 📈 {details}. Reply STOP to opt-out."
             elif message_type == "sentiment_spike":
-                body = f"ASSETPULSE ALERT: {symbol} 💭 {details}. Reply STOP to opt-out."
+                body = f"QUANTUMLEDGER ALERT: {symbol} 💭 {details}. Reply STOP to opt-out."
             elif message_type == "volume_surge":
-                body = f"ASSETPULSE ALERT: {symbol} 📊 {details}. Reply STOP to opt-out."
+                body = f"QUANTUMLEDGER ALERT: {symbol} 📊 {details}. Reply STOP to opt-out."
             else:
-                body = f"ASSETPULSE: {symbol} - {details}. Reply STOP to opt-out."
+                body = f"QUANTUMLEDGER: {symbol} - {details}. Reply STOP to opt-out."
 
             # Ensure message doesn't exceed SMS limits (160 chars for single SMS, 1600 for concatenated)
             if len(body) > 1600:
@@ -128,7 +128,7 @@ class SMSService:
             # Determine emoji based on trigger
             emoji = "📈" if trigger_type == "above" else "📉"
 
-            body = f"ASSETPULSE: {symbol} {emoji} Price {trigger_type} ${target_price:.2f}. Current: ${current_price:.2f}"
+            body = f"QUANTUMLEDGER: {symbol} {emoji} Price {trigger_type} ${target_price:.2f}. Current: ${current_price:.2f}"
 
             # Keep it under 160 characters for single SMS
             if len(body) > 160:
@@ -180,7 +180,7 @@ class SMSService:
             if len(message) > 160:
                 message = message[:157] + "..."
 
-            full_message = f"ASSETPULSE: {message} Reply STOP to opt-out."
+            full_message = f"QUANTUMLEDGER: {message} Reply STOP to opt-out."
 
             message_obj = self.client.messages.create(
                 body=full_message,

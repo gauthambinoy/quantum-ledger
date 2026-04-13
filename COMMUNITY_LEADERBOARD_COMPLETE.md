@@ -2,7 +2,7 @@
 
 ## Project Status: COMPLETED ✅
 
-All components of the Community Leaderboard feature have been successfully implemented for AssetPulse.
+All components of the Community Leaderboard feature have been successfully implemented for QuantumLedger.
 
 ## Implementation Summary
 
@@ -467,7 +467,7 @@ The Community Leaderboard feature is fully implemented and ready for production 
 ✅ Database optimization with indexes  
 ✅ Responsive design  
 
-The implementation follows the ASP.NET requirements specification and integrates seamlessly with the existing AssetPulse application.
+The implementation follows the ASP.NET requirements specification and integrates seamlessly with the existing QuantumLedger application.
 
 **Total Development Time**: Approximately 4 hours  
 **Lines of Code**: ~3,500 lines  

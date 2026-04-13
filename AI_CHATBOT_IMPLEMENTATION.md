@@ -1,12 +1,12 @@
-# AI Chatbot Feature Implementation - AssetPulse
+# AI Chatbot Feature Implementation - QuantumLedger
 
 **Date:** April 1, 2026  
 **Status:** Complete and Pushed to GitHub  
-**Commit:** `01da67a` - Build AI Chatbot feature for AssetPulse using Claude API
+**Commit:** `01da67a` - Build AI Chatbot feature for QuantumLedger using Claude API
 
 ## Overview
 
-This implementation adds an intelligent AI-powered chatbot to AssetPulse using the Anthropic Claude API. The chatbot provides conversational investment advice, market analysis, and portfolio recommendations with full context awareness.
+This implementation adds an intelligent AI-powered chatbot to QuantumLedger using the Anthropic Claude API. The chatbot provides conversational investment advice, market analysis, and portfolio recommendations with full context awareness.
 
 ## Architecture
 
@@ -108,7 +108,7 @@ Added helper function to `backend/app/auth.py`:
 
 **Features:**
 - Full-height chat interface with split layout
-- Header with AssetPulse AI branding and settings
+- Header with QuantumLedger AI branding and settings
 - Messages area with auto-scroll
 - Input field with send button
 

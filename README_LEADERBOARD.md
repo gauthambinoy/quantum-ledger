@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository now includes a fully functional **Community Leaderboard** feature for AssetPulse, enabling users to compete on prediction accuracy, earn achievement badges, and follow top traders.
+This repository now includes a fully functional **Community Leaderboard** feature for QuantumLedger, enabling users to compete on prediction accuracy, earn achievement badges, and follow top traders.
 
 ## Quick Links
 

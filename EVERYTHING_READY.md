@@ -1,4 +1,4 @@
-# 🎉 ASSETPULSE - EVERYTHING IS READY FOR AWS DEPLOYMENT
+# 🎉 QUANTUMLEDGER - EVERYTHING IS READY FOR AWS DEPLOYMENT
 
 ## ✅ WHAT I'VE BUILT FOR YOU
 
@@ -69,7 +69,7 @@ Save: Ctrl+X, Y, Enter
 
 ### Step 4: Deploy Everything! (10 min)
 ```bash
-cd /home/gautham/cryptostock-pro/terraform
+cd /home/gautham/quantum-ledger/terraform
 cp terraform.tfvars.example terraform.tfvars
 nano terraform.tfvars
 
@@ -172,7 +172,7 @@ Create account → Add portfolio → See 90%+ predictions!
 ## 📁 FILES CREATED
 
 ```
-/home/gautham/cryptostock-pro/
+/home/gautham/quantum-ledger/
 ├── terraform/
 │   ├── main.tf                    # Infrastructure (VPC, EC2, RDS)
 │   ├── variables.tf               # Configuration
@@ -187,7 +187,7 @@ Create account → Add portfolio → See 90%+ predictions!
 │   │   │   └── portfolio_metrics.py    # Utilities
 │   │   ├── routers/
 │   │   │   └── prediction.py           # NEW /advanced endpoint
-│   │   └── main.py                     # AssetPulse branding
+│   │   └── main.py                     # QuantumLedger branding
 │   ├── requirements.txt            # All dependencies
 │   └── Dockerfile                  # Container image
 │
@@ -275,7 +275,7 @@ terraform apply    # Rebuild
 
 - **Terraform Docs**: https://www.terraform.io/docs
 - **AWS Free Tier**: https://aws.amazon.com/free
-- **Your Repo**: https://github.com/gauthambinoy/cryptostock-pro
+- **Your Repo**: https://github.com/gauthambinoy/quantum-ledger
 
 ---
 
@@ -305,7 +305,7 @@ Pre-Deployment:
 [ ] Configure ~/.aws/credentials
 
 Deployment:
-[ ] cd /home/gautham/cryptostock-pro/terraform
+[ ] cd /home/gautham/quantum-ledger/terraform
 [ ] cp terraform.tfvars.example terraform.tfvars
 [ ] nano terraform.tfvars (edit passwords)
 [ ] terraform init

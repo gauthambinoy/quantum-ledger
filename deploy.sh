@@ -1,24 +1,24 @@
 #!/bin/bash
 set -e
 
-echo "🚀 AssetPulse AWS Deployment Script"
+echo "🚀 QuantumLedger AWS Deployment Script"
 echo "===================================="
 
 # 1. Clone repo
 cd /tmp
-rm -rf cryptostock-pro 2>/dev/null || true
-git clone https://github.com/gautham-kalidas/cryptostock-pro.git
-cd cryptostock-pro/terraform
+rm -rf quantum-ledger 2>/dev/null || true
+git clone https://github.com/gautham-kalidas/quantum-ledger.git
+cd quantum-ledger/terraform
 
 # 2. Create terraform.tfvars with secure defaults
 echo "📝 Creating Terraform configuration..."
 cat > terraform.tfvars << 'TFVARS'
 aws_region = "us-east-1"
-db_password = "AssetPulse2024!Secure#Password"
+db_password = "QuantumLedger2024!Secure#Password"
 newsapi_key = "test"
 fred_api_key = "test"
-jwt_secret_key = "assetpulse-super-secret-key-2024"
-github_repo_url = "https://github.com/gautham-kalidas/cryptostock-pro.git"
+jwt_secret_key = "quantumledger-super-secret-key-2024"
+github_repo_url = "https://github.com/gautham-kalidas/quantum-ledger.git"
 TFVARS
 
 # 3. Initialize Terraform
@@ -41,7 +41,7 @@ terraform output -json > /tmp/deployment_outputs.json
 cat /tmp/deployment_outputs.json | jq '.'
 
 echo ""
-echo "📊 Your AssetPulse is now LIVE:"
+echo "📊 Your QuantumLedger is now LIVE:"
 APP_URL=$(terraform output -raw live_app_url 2>/dev/null || echo "Check outputs above")
 echo "🌐 App URL: $APP_URL"
 echo "📚 API Docs: $(terraform output -raw api_docs_url 2>/dev/null || echo "Check outputs above")"

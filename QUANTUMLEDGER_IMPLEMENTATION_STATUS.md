@@ -1,4 +1,4 @@
-# 🚀 AssetPulse - Implementation Status & Roadmap
+# 🚀 QuantumLedger - Implementation Status & Roadmap
 
 ## ✅ COMPLETED WORK (All Phases 1-3 + TypeScript + Tests)
 
@@ -297,7 +297,7 @@ def multi_timeframe_signal(symbol):
 ## 📦 DEPLOYMENT CHECKLIST
 
 ### Pre-Launch (Next 1 Week)
-- [ ] Update branding: "AssetPulse" everywhere
+- [ ] Update branding: "QuantumLedger" everywhere
 - [ ] Make all UI responsive (Tailwind breakpoints)
 - [ ] Add enhanced prediction service
 - [ ] Test on real devices (mobile, tablet, desktop)
@@ -336,7 +336,7 @@ def multi_timeframe_signal(symbol):
 ## 🚨 Critical Next Steps
 
 ### TODAY (Next 4 hours):
-1. [ ] Rename project to "AssetPulse" everywhere
+1. [ ] Rename project to "QuantumLedger" everywhere
 2. [ ] Make navigation responsive (mobile menu)
 3. [ ] Update README with new vision
 
@@ -372,7 +372,7 @@ def multi_timeframe_signal(symbol):
 
 ## 🎉 Summary
 
-**AssetPulse** is now:
+**QuantumLedger** is now:
 - ✅ Production-ready (Security, Performance, Tests)
 - ✅ TypeScript-safe (No more runtime errors)
 - ✅ Responsive (Works on all devices)

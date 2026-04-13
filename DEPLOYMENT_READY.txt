@@ -1,5 +1,5 @@
 ═══════════════════════════════════════════════════════════════════════════════
-🚀 ASSETPULSE - DEPLOYMENT READY
+🚀 QUANTUMLEDGER - DEPLOYMENT READY
 ═══════════════════════════════════════════════════════════════════════════════
 
 ✅ PREPARATION COMPLETE
@@ -125,7 +125,7 @@ STEP 3: Configure AWS
   Time: 2 minutes
 
 STEP 4: Deploy with Terraform
-  cd /home/gautham/cryptostock-pro/terraform
+  cd /home/gautham/quantum-ledger/terraform
   cp terraform.tfvars.example terraform.tfvars
   nano terraform.tfvars  (edit db_password)
   terraform init

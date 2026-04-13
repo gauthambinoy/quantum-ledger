@@ -142,7 +142,7 @@ export default function DeveloperDashboard() {
             Developer Dashboard
           </Typography>
           <Typography variant="body1" color="textSecondary">
-            Manage your API keys and integrate AssetPulse predictions into your applications
+            Manage your API keys and integrate QuantumLedger predictions into your applications
           </Typography>
         </Box>
 
@@ -423,9 +423,9 @@ export default function DeveloperDashboard() {
                     Python
                   </Typography>
                   <Paper sx={{ p: 2, backgroundColor: '#f5f5f5', overflow: 'auto' }}>
-                    <code>{`import assetpulse
+                    <code>{`import quantumledger
 
-client = assetpulse.APIClient(
+client = quantumledger.APIClient(
     api_key="YOUR_API_KEY",
     api_secret="YOUR_API_SECRET"
 )
@@ -443,9 +443,9 @@ print(top)`}</code>
                     JavaScript
                   </Typography>
                   <Paper sx={{ p: 2, backgroundColor: '#f5f5f5', overflow: 'auto' }}>
-                    <code>{`const AssetPulse = require('assetpulse-js');
+                    <code>{`const QuantumLedger = require('quantumledger-js');
 
-const client = new AssetPulse({
+const client = new QuantumLedger({
   apiKey: 'YOUR_API_KEY',
   apiSecret: 'YOUR_API_SECRET'
 });
@@ -459,7 +459,7 @@ console.log(prediction);`}</code>
                     cURL
                   </Typography>
                   <Paper sx={{ p: 2, backgroundColor: '#f5f5f5', overflow: 'auto' }}>
-                    <code>{`curl -X GET "https://assetpulse.ai/api/v1/prediction/BTC" \\
+                    <code>{`curl -X GET "https://quantumledger.ai/api/v1/prediction/BTC" \\
   -H "Authorization: Bearer YOUR_API_KEY:YOUR_API_SECRET" \\
   -H "Content-Type: application/json"`}</code>
                   </Paper>
@@ -498,7 +498,7 @@ console.log(prediction);`}</code>
                     <ListItem>
                       <ListItemText
                         primary="Trading Bot"
-                        secondary="Algorithmic execution based on AssetPulse signals"
+                        secondary="Algorithmic execution based on QuantumLedger signals"
                       />
                     </ListItem>
                   </List>

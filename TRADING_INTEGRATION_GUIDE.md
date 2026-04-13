@@ -1,4 +1,4 @@
-# Live Trading Integration for AssetPulse
+# Live Trading Integration for QuantumLedger
 
 Complete guide for the Alpaca API trading integration enabling live and paper trading with real-time execution.
 
@@ -557,5 +557,5 @@ For issues or questions:
 
 - [Alpaca API Documentation](https://docs.alpaca.markets)
 - [alpaca-trade-api Python SDK](https://github.com/alpacahq/alpaca-trade-api-python)
-- [AssetPulse Prediction API](/api/prediction)
+- [QuantumLedger Prediction API](/api/prediction)
 - [Trading Panel Component](/frontend/src/pages/TradingPanel.jsx)

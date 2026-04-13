@@ -1,4 +1,4 @@
-# 🎯 ASSETPULSE - START HERE
+# 🎯 QUANTUMLEDGER - START HERE
 
 ## What Has Been Built (COMPLETE ✅)
 
@@ -41,7 +41,7 @@ Go here: https://railway.app
 Click "New Project" → "Deploy from GitHub"
 
 ### Step 2: Connect Your GitHub Repo
-Select: `cryptostock-pro`
+Select: `quantum-ledger`
 
 ### Step 3: Add 2-3 Environment Variables
 In Railway dashboard, add:
@@ -75,7 +75,7 @@ Your live app will have:
 ## Test Your Live App
 
 ```bash
-# 1. Get your live URL from Railway (like: https://assetpulse-production-xxx.railway.app)
+# 1. Get your live URL from Railway (like: https://quantumledger-production-xxx.railway.app)
 
 # 2. Check it's working
 curl https://your-live-url/health

@@ -107,9 +107,9 @@ services:
 **Key Addition:**
 ```bash
 # Create systemd service (GUARANTEED auto-restart)
-cat > /etc/systemd/system/assetpulse-docker.service << 'SERVICE'
+cat > /etc/systemd/system/quantumledger-docker.service << 'SERVICE'
 [Unit]
-Description=AssetPulse - Always Running Docker Service
+Description=QuantumLedger - Always Running Docker Service
 After=docker.service
 
 [Service]
@@ -121,8 +121,8 @@ RestartSec=10
 WantedBy=multi-user.target
 SERVICE
 
-systemctl enable assetpulse-docker
-systemctl start assetpulse-docker
+systemctl enable quantumledger-docker
+systemctl start quantumledger-docker
 ```
 
 ---
@@ -150,16 +150,16 @@ systemctl start assetpulse-docker
 **Key Addition:**
 ```terraform
 # CloudWatch Alarm for auto-recovery
-resource "aws_cloudwatch_metric_alarm" "assetpulse_status_check" {
-  alarm_name = "assetpulse-instance-status-check"
+resource "aws_cloudwatch_metric_alarm" "quantumledger_status_check" {
+  alarm_name = "quantumledger-instance-status-check"
   metric_name = "StatusCheckFailed"
   threshold = "1.0"
-  alarm_actions = [aws_sns_topic.assetpulse_alerts.arn]
+  alarm_actions = [aws_sns_topic.quantumledger_alerts.arn]
 }
 
 # Auto-recover instance when status checks fail
-resource "aws_ec2_instance_state" "assetpulse_recovery" {
-  instance_id = aws_instance.assetpulse.id
+resource "aws_ec2_instance_state" "quantumledger_recovery" {
+  instance_id = aws_instance.quantumledger.id
 }
 ```
 
