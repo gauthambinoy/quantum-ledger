@@ -40,7 +40,7 @@ arch==6.2.0
 
 # Sentiment Analysis & NLP
 textblob==0.17.1
-newsapi==1.1.4
+newsapi-python==0.2.7
 
 # Social Media APIs
 praw==7.7.0
