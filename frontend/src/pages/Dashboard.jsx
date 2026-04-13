@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { usePortfolioStore, useMarketStore, useAuthStore, useAlertsStore } from '../utils/store';
 import { formatCurrency, formatPercent, getChangeColor, formatCompact, timeAgo } from '../utils/helpers';
 import { Link } from 'react-router-dom';
@@ -94,13 +94,17 @@ const Dashboard = () => {
 
   const allocationTotal = allocationData.reduce((sum, d) => sum + d.value, 0);
 
-  // Mini profit chart data (simulated from market data)
-  const profitChartData = Array.from({ length: 12 }, (_, i) => ({
-    month: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][i],
-    value: totalValue > 0
-      ? totalValue * (0.85 + Math.random() * 0.3) * ((i + 1) / 12)
-      : 1000 + Math.random() * 500 * i,
-  }));
+  // Mini profit chart data (stable across re-renders)
+  const profitChartData = useMemo(() => {
+    // Use a seeded sequence for stable values
+    const seed = Math.round(totalValue) || 1000;
+    return Array.from({ length: 12 }, (_, i) => ({
+      month: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][i],
+      value: totalValue > 0
+        ? totalValue * (0.85 + ((((seed * (i + 1) * 9301 + 49297) % 233280) / 233280) * 0.3)) * ((i + 1) / 12)
+        : 1000 + ((((seed * (i + 1) * 9301 + 49297) % 233280) / 233280) * 500) * i,
+    }));
+  }, [totalValue]);
 
   // Build activity feed from real data
   const activityItems = [
@@ -268,23 +272,27 @@ const Dashboard = () => {
             </div>
 
             {/* Portfolio Goal */}
-            <div className="glass-card p-5">
-              <p className="text-xs font-medium text-gray-400 dark:text-gray-500 mb-3 uppercase tracking-wide">Portfolio Goal</p>
-              <p className="text-2xl font-bold tracking-tight">
-                {totalValue > 0 ? `${Math.min(Math.round((totalValue / Math.max(totalValue * 1.3, 10000)) * 100), 100)}%` : '0%'}
-              </p>
-              <div className="mt-2">
-                <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-gradient-to-r from-primary-500 to-success-500 rounded-full transition-all duration-500"
-                    style={{ width: `${Math.min(Math.round((totalValue / Math.max(totalValue * 1.3, 10000)) * 100), 100)}%` }}
-                  />
+            {(() => {
+              const goalTarget = Math.max(totalValue * 1.3, 10000);
+              const goalPercent = totalValue > 0 ? Math.min(Math.round((totalValue / goalTarget) * 100), 100) : 0;
+              return (
+                <div className="glass-card p-5">
+                  <p className="text-xs font-medium text-gray-400 dark:text-gray-500 mb-3 uppercase tracking-wide">Portfolio Goal</p>
+                  <p className="text-2xl font-bold tracking-tight">{goalPercent}%</p>
+                  <div className="mt-2">
+                    <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-gradient-to-r from-primary-500 to-success-500 rounded-full transition-all duration-500"
+                        style={{ width: `${goalPercent}%` }}
+                      />
+                    </div>
+                    <p className="text-xs text-gray-500 mt-1">
+                      Goal: {formatCurrency(goalTarget, 0)}
+                    </p>
+                  </div>
                 </div>
-                <p className="text-xs text-gray-500 mt-1">
-                  Goal: {formatCurrency(Math.max(totalValue * 1.3, 10000), 0)}
-                </p>
-              </div>
-            </div>
+              );
+            })()}
 
             {/* Active Holdings */}
             <div className="glass-card p-5">
@@ -421,9 +429,9 @@ const Dashboard = () => {
                     {stockGainers.length + cryptoGainers.length}
                   </p>
                   <span className={`text-xs font-medium px-1.5 py-0.5 rounded-md ${
-                    stockGainers.length > 0 ? 'bg-danger-500/20 text-danger-400' : 'bg-gray-500/20 text-gray-400'
+                    stockGainers.length > 0 ? 'bg-success-500/20 text-success-400' : 'bg-gray-500/20 text-gray-400'
                   }`}>
-                    {stockGainers.length > 0 ? `-${stockGainers.length}` : '0'}
+                    +{stockGainers.length}
                   </span>
                 </div>
                 <p className="text-xs text-gray-500 mt-1">Tracked gainers today</p>
@@ -440,7 +448,7 @@ const Dashboard = () => {
                   </span>
                 </div>
                 <p className="text-2xl font-bold">{formatCurrency(Math.abs(totalGainLoss), 0)}</p>
-                <p className="text-xs text-gray-500 mt-1">{totalGainLoss >= 0 ? 'Net' : 'Weekly'} Profit</p>
+                <p className="text-xs text-gray-500 mt-1">Net Profit</p>
               </div>
             </div>
           </div>
