@@ -16,8 +16,12 @@ api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      // Clear any cached auth data and redirect to login
-      window.location.href = '/login';
+      // Only redirect if not already on login/register and not checking auth
+      const url = error.config?.url || '';
+      const isAuthCheck = url.includes('/auth/me') || url.includes('/auth/login') || url.includes('/auth/register') || url.includes('/auth/guest');
+      if (!isAuthCheck && !window.location.pathname.startsWith('/login') && !window.location.pathname.startsWith('/register')) {
+        window.location.href = '/login';
+      }
     }
     return Promise.reject(error);
   }
